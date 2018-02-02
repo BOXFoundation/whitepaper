@@ -11,9 +11,9 @@ header-includes:
     - \usepackage{wrapfig}
     - \usepackage{fontspec}
     - \setmainfont{Latin Modern Sans}
-    - \fontsize{13pt}{13pt}
     - \usepackage[hang]{footmisc}
 urlcolor: blue
+fontsize: 12pt
 ---
 
 \clearpage
@@ -45,13 +45,17 @@ urlcolor: blue
 
 In diversity we believe.
 
-During the past years, we all witnessed the rapid growth of the digital content industry led by a vareity of web content platforms and mobile apps, such as Youtube, Spotify, Reddit, or music.ly. Despite the great achievements made by these leading players, still we see the properity and diversity of the whole industry suffer from a few long existing problems:
+During the past years, we all witnessed the rapid growth of the digital content industry led by a vareity of web content platforms and mobile apps, such as Youtube, Spotify, Reddit, and music.ly. Despite the great achievements made by these leading players, still we see the __properity__ and __diversity__ of the whole industry suffered from several long existing problems:
 
-1. __Lack of incentives to original content creators.__ 
++ **Poor protection for original contents and real creators.**  
 
-2. **Central censorship.**
++ **Central censorship.**
+
++ **The decisive role of distributors.**
 
 ## A Blockchain-based Ecosystem
+
+We believe the future of the digital content industry is a blockchain-based ecosystem. 
 
 ## A New Cryptocurrency
 
@@ -61,7 +65,25 @@ During the past years, we all witnessed the rapid growth of the digital content 
 
 # The Power of BOX 
 
+## Replacing Advertising with Token-based Reward System
+
+## Motivating Channels to Distribute Content Actively
+
+## Fighting Against Spams
+
+## Protecting Creators
+
+## Suppressing Vicious Competition
+
 # Technology
+
+## Why A New Platform?
+
+## BOX Chain
+
+## One Passport
+
+## Elastic Validation
 
 # Use Case Examples
 
