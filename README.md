@@ -13,11 +13,13 @@ Currently the build instructions are for Mac OS High Sierra but may successfully
 brew install pandoc
 ```
 
++ Optional: Install eisvogel.tex to Pandoc's template folder
+
 ## Build Instructions
 
 Open the whitepaper directory
 ```bash
-cd ~/whitepaper
+cd ~/castbox-wp
 ```
 
 Compile using pandoc

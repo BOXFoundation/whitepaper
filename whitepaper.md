@@ -84,6 +84,7 @@ Founded by an ex-Googler, the CastBox team is now a 50-person team with 10+ year
 # Technology
 
 ## Why A New Platform?
+
 The current mainstream blockchain networks, such as Bitcoin and Ethereum, are not a natural fit for the digital content industry due to the following reasons: 
 
 + **Long transaction delays & low throughput.** The digital content industry is quite different from finance or e-commerce world in terms of action frequency. Typically we might transfer our money or buy/sell goods several times a day, but on a digital content platform, a teenager might do way more actions, like streaming a song or watching a movie clip or tipping an article writer. In other words, we are expecting way larger transaction volume in the online digital content world. This trait of the digital content industry determines that current Bitcoin or Ethereum platform cannot meet the needs from real world, which leaves us no choice but to find novel solutions and build a new blockchain platform. 
@@ -101,18 +102,26 @@ To make it very clear, we are NOT trying to build an upgraded Ethereum that meet
 Our design of the BOX Chain follows the __UNIX philosophy__: building a large system on top of a series of simple, modular, and reliable small parts. Instead of using a large, expensive-to-verify blockchain, we use small, parellel, mobile-friendly micro chains. Using programming language metaphor, __we can view Bitcoin as the C in the blockchain realm, while Ethereum as Java; then our BOX chain can be thought of as the Go in the blockchain world__. Just like go routines in the Go language, the micro chains will be tiny in terms of physical size and will be powerful as well. The micro chains will play the most important role in our BOX Chain. 
 
 ## Off-chain "Smart Contract"
+
 Since the birth of Ethereum, smart contracts have been an indispensable part for many blockchain projects. However, most contracts need only one thing from the blockchain: an immutable ordering of commitments to prevent double-spending. Therefore, we decide to move the bulk of smart contracts off the chain. Instead of using complex and resource intensive smart contracts to align the interests of stakeholders and automate payment related transactions, we aggregate simple signatures to achieve the same goal but with much higher performance. By using signature itself as a witness, we can move the bulk of transactions off-chain and leave the blockchain to do what it is really good at: check a multi-sig. 
 
 A crucial piece of this approach is Schnorr Signature[^fn1]. Unlike ECDSA, Schnorr signature has **linearity** in its math, which makes it ideal for creating "adaptor signature" that can be used in settling off-chain transactions automatically. Actually, based on the exciting progress made recently in this research area spearheaded by Andrew Poelstra, a mathematician from Blockstream, we are exploring this technology to build a light-weight but powerful blockchain that suits for the digital content industry. 
 
-## One Passport
-We are planning to build a powerful decentralized identity service "One Passport", allowing the users to transact frictionlessly **across multiple apps or websites**. Furthermore, it will bind a creator to his artworks transparently and permanently, which helps him to build his reputation in the digital content world. On the other hand, this identity service will also help content consumers to own an ongoing reputation and experience on different web or mobile platforms with one identity. We will investigate a few third-party identity services such as uPort[^fn2] or Keybase[^fn3], to decide whether we integrate it into our One Passport service; or we will develop our own solution if we find they cannot meet the needs of the ecosystem.
+## BOX Passport
 
-# Token Allocations
+We are planning to build a powerful decentralized identity service called "BOX Passport", allowing the users to transact frictionlessly **across multiple apps or websites**. With the growth of the ContentBox ecosystem, a plethora of content applications are expected to be built atop ContentBox. A single user shall have a consistent identity across all of them, instead of having to create an independent identity for each application.
 
-Before the official launch of the native blockchain on the ContentBox Platform, BOX will be launched using Ethereum ERC 20 token standard.
+We establish the identity by extending the wallet concept to store personal information such as reputation besides token account. This identify service is not stored in any application’s centralized databases and inherently decentralized, less vulnerable to hacks. Users have full control on their identity and decide who can access which part of it for how long. Furthermore, BOX Passport will bind a creator to his artworks transparently and permanently, which helps him to build an ongoing reputation in the digital content world.
 
-Propotion | Usage | Detail |
+We will possibly integrate 3rd-party identity services such as Keybase[^fn3] and uPort[^fn2] into our identity service for broader interoperability.
+
+# Token Distribution
+
+Before the official launch of the native blockchain on the ContentBox Platform, BOX will be launched using Ethereum ERC 20 token standard. Once the main net of BOX Chain is online and stable, the ERC20 token will be converted to the chain token on a 1-1 basis. 
+
+## Allocations
+
+Percentage | Usage | Detail |
 |---|---|--------|
 25% | Pre-sale | Target selected institutional investors, with a 6-month locking period. |
 15% | Team | Rewards for in-house dev team and open-source contributors with a 4-year vesting period. |
@@ -120,11 +129,23 @@ Propotion | Usage | Detail |
 20% | Foundation | Protect the BOX token from speculative trading and fund the operations of the foundation. |
 10% | Partnership | To fund the bounty program and build partnership with other audio/vedio websites or mobile apps. |
 
+## Use of Proceeds
+
+Percentage | Item |
+|---|------|
+50% | R&D |
+25% | Marketing & Promotion |
+15% | Legal, Auditing, and Compliance |
+10% | General & Administrative | 
+
 # Roadmap
+
+The CastBox and ContentBox technical roadmaps include the following milestones:
 
 - 2016.02 CastBox team founded
 - 2016.02 CastBox for Android launched
 - 2017.01 CastBox for iOS launched
+- 2017.10 Deep in-audio search feature launched
 - 2018.02 Token sale
 - 2018.06 Token integrated into CastBox app
 - 2018.12 Testnet of BOX Chain online 
