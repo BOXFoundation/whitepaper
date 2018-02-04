@@ -26,19 +26,23 @@ During the past years, we all witnessed the exploding growth of the digital cont
 
 + **Central censorship.** Some may argue that the central censorship is necessary to filter spam and build a healthy online community and totally legal in many countries. However, in today's world where we are all connected by the Internet, censorship is becoming more and more counterproductive, not only because it kills diversity by preventing us from discussing the censored topic, but also because it cannot eliminate real spams effectively under the circumstances of the explosion of user-gernerated contents. 
 
-+ **The decisive role of distributors.** There are many stakeholders in the digital content area: artists, consumers, investors, advertisers and distributors. It is well known that the distributors are playing the most important role in today's ecosystem, especially those big web or mobile content platforms such as Youtube or Spotify. They are holding large amount of web traffic and they decide how to dispatch the traffic. Compared with the central platform, both artists and consumers are in weak postion and lack of bargin power when discussing the monetization and payout mechanisms. Therefore, as we can see, most of the revenue will be taken by the platform and most content creators can just collect a small part of the pie. On the other hand, the high traffic acquisition cost of the central platform will be transferred to the content consumers. They either have to pay unfair subscription fees or tolerate longer and longer ad clips.
++ **The decisive role of distributors.** There are many stakeholders in the digital content area: artists, consumers, investors, advertisers and distributors. It is well known that the distributors are playing the most important role in today's ecosystem, especially those big web or mobile content platforms such as Youtube or Spotify. They are holding large amount of web traffic and they decide how to dispatch the traffic. Compared with the central large platform, both creators and audiences are in weak postion and lack of bargin power when discussing the monetization and payout mechanisms. Therefore, as we can see, most of the revenue will be taken by the platform and most content creators can just collect a small part of the pie. On the other hand, the high traffic acquisition cost of the central platform will be transferred to the content consumers. They either have to pay unfair subscription fees or tolerate longer and longer ad clips.
 
-## A Blockchain-based Ecosystem
+## A Blockchain-based Ecosystem: ContentBox
 
-We believe the future of the digital content industry is a blockchain-based ecosystem. 
+Our solution to the problems mentioned above is a blockchain-based ecosystem: ContentBox. 
+
+Unlike the traditional open platforms, such as App Store or Wechat Open Platform[^fn6], ContentBox is fully __decentralized, autonomous, and driven by the open source community instead of a giant firm in the industry__. By leveraging the blockchain as an open, immutable, distributed, and temper-proof database, web or mobile content platforms can share rights data without ceding control to a third party. Fast on-chain settlement of transactions will also help a song writer to gain his share directly when an audience streams his song in an app. 
+
+In principle, ContentBox is designed to benefit all participants in the industry, including but not limited to, internet scale platforms, creators, app developers and normal audiences, allowing them to collaborate, innovate and build new generation of digital content applications that play on fair terms. For content creators, they now have a better protection for their IP rights and will get paid more for their artworks; for content consumers, they can watch a tv show or listen to a lecture without being subscribed to any specific service (they can pay by the tokens they earned from contributing to the community); for those big distribution platforms, they will also benefit from lowering the traffic acquisition cost and IP purchase cost. ContentBox can even bring benefits to the investors by allowing them to participate in many micro crowd-fundings started by various artists instead of betting large amount money on one project.
 
 ## A New Cryptocurrency: BOX
 
 ## The Foundation
 
-To oversee the growth of the ContentBox Ecosystem, we have set up an entity the Contentbox Foundation in Singapore. The Foundation will administer the use of the proceeds and ensure the healthy circulation of the BOX token. Our ultimate goal is to build a fully decentralized and autonomous ecosystem for the digital content industry. Therefore, we would like to make the governance and operation of the Foundation as transparent as possible. __The Foundation should be a totally software defined organization in the future__. 
+To oversee the growth of the ContentBox Ecosystem, we have set up an entity the Contentbox Foundation in Singapore. The Foundation will administer the use of the proceeds and ensure the healthy circulation of the BOX token. Our ultimate goal is to build a fully decentralized and autonomous ecosystem for the digital content industry. Therefore, we would like to make the governance and operation of the Foundation as transparent as possible. As a matter of fact, we are planning to __build the Foundation as a totally software defined organization in the future__. 
 
-As the founding member of the ContentBox Foundation, CastBox will pioneer the transition from a centralized app to a decentralized blockchain-based app and introduce BOX to its users. Also CastBox will open source vast majority of its codebase after it integrate BOX into the app successfully. 
+As the founding member of the ContentBox Foundation, CastBox will pioneer the transition from a centralized app to a decentralized blockchain-based app and introduce BOX to its tens of millions of users. In the near future, CastBox will also open source the vast majority of its codebase after it integrates BOX into the app successfully, encouraging the open source community to drive the evolution of ContentBox.
 
 # About CastBox
 
@@ -88,7 +92,7 @@ The current mainstream blockchain networks, such as Bitcoin and Ethereum, are no
 
 + **High transaction fees.** High transaction cost means there is no real micro-payment; and without micro-payments, fans cannot support content creators with small donations, neither can they pay for watching just an episode of a series show nor access to limited content like a VIP club. The digital content industry needs a frictionless micro-payment system to cultivate an active and healthy community. 
 
-In conclusion, current mainstream chains cannot serve as the foundation of a decentralized digital content ecosystem. To address the aforementioned challenges, we propose a new public chain: _BOX Chain_.
+In conclusion, current mainstream chains cannot serve as the foundation of a decentralized digital content ecosystem. To address the aforementioned challenges, CastBox will propose and lead the open source development of _BOX Chain_, a decentralized data and payment network that will benefit all the participants in the industry.
 
 ## BOX Chain
 
@@ -104,22 +108,23 @@ A crucial piece of this approach is Schnorr Signature[^fn1]. Unlike ECDSA, Schno
 ## One Passport
 We are planning to build a powerful decentralized identity service "One Passport", allowing the users to transact frictionlessly **across multiple apps or websites**. Furthermore, it will bind a creator to his artworks transparently and permanently, which helps him to build his reputation in the digital content world. On the other hand, this identity service will also help content consumers to own an ongoing reputation and experience on different web or mobile platforms with one identity. We will investigate a few third-party identity services such as uPort[^fn2] or Keybase[^fn3], to decide whether we integrate it into our One Passport service; or we will develop our own solution if we find they cannot meet the needs of the ecosystem.
 
-# Use Case Examples
+# Token Allocations
 
-# Token Distribution
+Before the official launch of the native blockchain on the ContentBox Platform, BOX will be launched using Ethereum ERC 20 token standard.
 
 Propotion | Usage | Detail |
 |---|---|--------|
 25% | Pre-sale | Target selected institutional investors, with a 6-month locking period. |
 15% | Team | Rewards for in-house dev team and open-source contributors with a 4-year vesting period. |
-30% | Ecosystem Incentives | Incentive all participants in the ecosystem, such as the creators, the viewers, the individual investors, the platform, etc. |
+30% | Ecosystem Incentives | Incentive all participants in the ecosystem, such as the creators, the audiences, the individual investors, the platform, etc. |
 20% | Foundation | Protect the BOX token from speculative trading and fund the operations of the foundation. |
 10% | Partnership | To fund the bounty program and build partnership with other audio/vedio websites or mobile apps. |
 
 # Roadmap
 
-- 2016.01 CastBox team founded
+- 2016.02 CastBox team founded
 - 2016.02 CastBox for Android launched
+- 2017.01 CastBox for iOS launched
 - 2018.02 Token sale
 - 2018.06 Token integrated into CastBox app
 - 2018.12 Testnet of BOX Chain online 
@@ -136,3 +141,4 @@ https://bitcoincore.org/en/2017/03/23/schnorr-signature-aggregation/
 [^fn3]: https://keybase.io/
 [^fn4]: https://play.google.com/store/apps/details?id=fm.castbox.audiobook.radio.podcast
 [^fn5]: https://itunes.apple.com/app/castbox-radio/id1243410543
+[^fn6]: https://open.weixin.qq.com/
