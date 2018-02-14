@@ -47,17 +47,11 @@ Even advertisers will gain benefits from the new ecosystem. With ContentBox, adv
 
 To encourage all stakeholders to participate in the building of a new economy and ensure its sustainable development, we will introduce a new token, named BOX, which will play a key role in the ContentBox ecosystem. 
 
-## The Foundation
+## About CastBox
 
-To oversee the growth of the ContentBox Ecosystem, we have set up an entity the Contentbox Foundation in Singapore. The Foundation will administer the use of the proceeds and ensure the healthy circulation of the BOX token. Our ultimate goal is to build a fully decentralized and autonomous ecosystem for the digital content industry. Therefore, we would like to make the governance and operation of the Foundation as transparent as possible. As a matter of fact, we are planning to __build the Foundation as a totally software defined organization in the future__. 
+CastBox is one of the most popular mobile audio platforms across the globe, ranked #3 in News & Magazines on Google Play with TopBuzz and Twitter. It pioneered in-audio search to deliver contextual recommendations for listeners of podcasts, on-demand radio, and audiobooks. Today, CastBox has about 50 employees with offices in Beijing, San Francisco, New York, and Hong Kong.
 
-As the founding member of the ContentBox Foundation, CastBox will pioneer the transition from a centralized app to a decentralized blockchain-based app and introduce BOX to its tens of millions of users. In the near future, CastBox will also open source the vast majority of its currently proprietary codebase after it integrates BOX into the app successfully, encouraging the open source community to drive the evolution of ContentBox.
-
-# About CastBox
-
-CastBox is an award-winning global spoken audio platform and podcast player that intelligently recommends the most relevant on-demand radio, podcasts and audiobooks. 
-
-Founded by an ex-Googler, the CastBox team is now a 50-person team with 10+ years of experience in internet companies such as Google, Facebook, and Alibaba. The team launched the first version of CastBox in early 2016, and now CastBox has been one of the most popular mobile apps on iOS[^fn5] and Android[^fn4].
+Founded in early 2016 by an ex-Googler, the application currently has over 50 million audio content available, with over 12 million installed users. It is also the winner of Google Global Android Excellence Program 2017, the Most Entertaining of Best Apps by Google Play in 2016 and a number of other awards. CastBox is listed as Editors’ choice in 135 of Google Play’s countries.
 
 \begin{figure}[h]
   \begin{center}
@@ -65,26 +59,92 @@ Founded by an ex-Googler, the CastBox team is now a 50-person team with 10+ year
     \caption{Rank in News \& Magazines, Google Play, USA (Source: App Annie)}
   \end{center}
 \end{figure}
-## Key Facts
 
-- $30M in funding from top equity venture capitals
-- Top 5 news/magazine app in the US, 4.7 rating on Google Play
-- 12 million users across all platforms in 135 countries; 50% monthly retention rate
-- 50 million volumes of audio content in 70 languages
-- Team of 50 from Peking Univ., Tsinghua Univ., Google, Tencent, Alibaba, Toutiao etc; Global offices in Beijing, San Francisco, New York, Korea, Hong Kong
-- Key features include In-Audio Search, which allows users to search for keywords within any audio files; personalized recommendations; free uploading
+## The Foundation
 
-## Achievements
+To oversee the growth of the ContentBox Ecosystem, we have set up an entity the Contentbox Foundation in Singapore. The Foundation will administer the use of the proceeds and ensure the healthy circulation of the BOX token. Our ultimate goal is to build a fully decentralized and autonomous ecosystem for the digital content industry. Therefore, we would like to make the governance and operation of the Foundation as transparent as possible. As a matter of fact, we are planning to __build the Foundation as a totally software defined organization in the future__. 
 
-- Winner of the 2017 Google Global Android Excellence Program award 
-- Nominated for the 2017 Standout Startup award by Google play
-- Winner of the 2017 Best App of Google Play (Best Daily Helper and Best Hidden Gem) award
-- Given Most Entertaining of Best Apps 2016 title by Google Play
-- Winner of Judges' Choice Award of the Google Demo Day 2016 Women's Edition
-- Winner of 2016’s Top Trending Apps of Global Best by Google Play
-- Editor’s Choice award in 135 countries featured by Google Play
+As the founding member of the ContentBox Foundation, CastBox will pioneer the transition from a centralized app to a decentralized blockchain-based app and introduce BOX to its tens of millions of users. In the near future, CastBox will also open source the vast majority of its currently proprietary codebase after it integrates BOX into the app successfully, encouraging the open source community to drive the evolution of ContentBox.
 
-# Uses of BOX as a Cryptocurrency
+# Technical Architecture
+
+## Design Philosophy
+//TODO
+
+## Why A New Platform?
+
+The current mainstream blockchain networks, such as Bitcoin and Ethereum, are not a natural fit for the digital content industry due to the following reasons: 
+
++ **Long transaction delays & low throughput.** The digital content industry is quite different from finance or e-commerce world in terms of action frequency. Typically we might transfer our money or buy/sell goods several times a day, but on a digital content platform, a teenager might do way more actions, like streaming a song or watching a movie clip or tipping an article writer. In other words, we are expecting way larger transaction volume in the online digital content world. This trait of the digital content industry determines that current Bitcoin or Ethereum platform cannot meet the needs from real world, which leaves us no choice but to find novel solutions and build a new blockchain platform. 
+
++ **No privacy in smart contracts.** In Ethereum all smart contracts are stored publicly on the nodes of the blockchain, which introduces severe privacy problems. Due to the visibility of the contracts, a normal streamer's taste or preferences may be detected and published to a lot of people he may not know. Likewise, a content producer might also worry that his or her profit sharing plan be searched by outsiders and leaked to the public. Furthermore, the increasing complexity of smart contracts can bring security risks as demonstrated by DAO.
+
++ **High transaction fees.** High transaction cost means there is no real micro-payment; and without micro-payments, fans cannot support content creators with small donations, neither can they pay for watching just an episode of a series show nor access to limited content like a VIP club. The digital content industry needs a frictionless micro-payment system to cultivate an active and healthy community. 
+
+In conclusion, current mainstream chains cannot serve as the foundation of a decentralized digital content ecosystem. To address the aforementioned challenges, CastBox will propose and lead the open source development of _BOX Chain_, a decentralized data and payment network that will benefit all the participants in the industry.
+
+## BOX Payment Chain
+
+To make it very clear, we are NOT trying to build an upgraded Ethereum that meets any needs of various industries. Instead, the BOX Chain is built on a layered solution that aims to increase the scalability of the blockchain. While various transactions can be completed on the BOX Chain in a fast and reliable way, __the chain itself does not plan to support a general purpose Turing-complete virtual machine like EVM.__
+
+Our design of the BOX Chain follows the __UNIX philosophy__: building a large system on top of a series of simple, modular, and reliable small parts. Instead of using a large, expensive-to-verify blockchain, we use small, parallel, mobile-friendly micro chains. Using programming language metaphor, __we can view Bitcoin as the C in the blockchain realm, while Ethereum as Java; then our BOX chain can be thought of as the Go in the blockchain world__. Just like go routines in the Go language, the micro chains will be tiny in terms of physical size and will be powerful as well. The micro chains will play the most important role in our BOX Chain. 
+
+### Off-chain "Smart Contract"
+
+Since the birth of Ethereum, smart contracts have been an indispensable part for many blockchain projects. However, most contracts need only one thing from the blockchain: an immutable ordering of commitments to prevent double-spending. Therefore, we decide to move the bulk of smart contracts off the chain. Instead of using complex and resource intensive smart contracts to align the interests of stakeholders and automate payment related transactions, we aggregate simple signatures to achieve the same goal but with much higher performance. By using signature itself as a witness, we can move the bulk of transactions off-chain and leave the blockchain to do what it is really good at: check a multisig. 
+
+### Schnorr Signature
+
+A crucial piece of this approach is Schnorr Signature[^fn1]. Unlike ECDSA, Schnorr signature has **linearity** in its math, which makes it ideal for creating "adaptor signature" that can be used in settling off-chain transactions automatically. Actually, based on the exciting progress made recently in this research area spearheaded by Andrew Poelstra, a mathematician from Blockstream, we are exploring this technology to build a light-weight but powerful blockchain that suits for the digital content industry. 
+
+### Micro Chains
+
+## BOX Passport
+
+We are planning to build a powerful decentralized identity service called "BOX Passport", allowing the users to transact frictionlessly **across multiple apps or websites**. With the growth of the ContentBox ecosystem, a plethora of content applications are expected to be built atop ContentBox. A single user shall have a consistent identity across all of them, instead of having to create an independent identity for each application.
+
+We establish the identity by extending the wallet concept to store personal information such as reputation besides token account. This identify service is not stored in any application’s centralized databases and inherently decentralized, less vulnerable to hacks. Users have full control on their identity and decide who can access which part of it for how long. Furthermore, BOX Passport will bind a creator to his artworks transparently and permanently, which helps him to build an ongoing reputation in the digital content world.
+
+Based on BOX Passport, we will introduce a new feature for the ecosystem, named BOX Login. Similar to Facebook Login in concept, Box Login is a secure and convenient way for people to sign into any website, desktop app or mobile application in ContentBox ecosystem. However, BOX Login is implemented on the blockchain and will not be controlled by any single company or organization, which set it apart from today's any third-party authentication system on the world. 
+
+We will possibly integrate 3rd-party identity services such as Keybase[^fn3] and uPort[^fn2] into our identity service for broader interoperability.
+
+## Libraries, SDK and Turn-key Solutions
+//TODO
+
+## Related Works
+
+### Sharding
+Similar to database sharding in traditional software system, sharding on blockchain is an approach to improve system scalability. The key idea to split the overall state of the chain into different shards, and each shard only process a small part of the state and does so in parallel[^fn11]. 
+
+A lot of blockchain developers see sharding is a promising approach to solve the chain's scalability problem, and many blockchain projects based their solution on this technology. However, we are a little bit more conservative on its fully implementation on the main net in the recent future. Basically, sharding the blockchain wants to create a network where every node only processes a small portion of all transactions, while still maintaining high security. A fast and secure solution on this problem is not easy to find because a transaction executed on the blockchain can depend on any part of the previous state in the blockchain, which makes it challenging to do things in parallel.
+
+Overall, we believe sharding still has a long way to go before it becomes a well-adopted solution to scale the blockchain. Therefore we will pay close attention to the progress in this area but will not use it as a core technology in our solution for now.
+
+### Lighting Network and Raiden Network
+Basically, both of Lightning[^fn9] and Raiden[^fn10] network rely on off-chain state channels. The core idea here is that participants put some bitcoin or ether into a multi-signature address (open a payment channel) and then sign transactions without submitting it to the blockchain. Payment channels can be organized into a network and thus a payment between two parties can be conducted through multiple hops. The payment channel can be closed by either party at any time, and the last-signed transaction with the most up-to-date balances for both parties is the one that will be committed to the blockchain.
+
+Both of these two approaches can increase transaction throughput and lower fees effectively in their respective environment (one for Bitcoin and one for Ethereum) if properly implemented. However, there are still some limitations in practice. For instance, all participants of a transaction need to lock up some tokens on the chain until the channel is closed, thus discouraging a central payee to use the payment network. Another problem is the potential privacy leak on the network because the hubs may know the participant's real identity. 
+
+### Plasma
+//TODO
+
+### MimbleWimble
+//TODO
+
+### Tendermint
+//TODO
+
+### Steem
+//TODO
+
+# Integration with CastBox App
+
+## Mobile Wallet
+
+A light wallet will be integrated into CastBox application. With the built-in wallet, a user can see his balances and transaction history instantly while using the app, including the token rewards for his contribution to the CastBox community. In the future, the wallet will show balances across apps after the implementation and deployment of BOX Passport. 
+
+As a popular mobile app, CastBox is a natural host for a mobile wallet of BOX tokens. It will help millions of users onboard ContentBox, solving one of the biggest challenges when building an online ecosystem: cold-start. Moreover, as CastBox is high-frequent app, its users will interact with the application multiple times a day and will get familiar with crypto token related concepts gradually. In the long run, when they are comfortable with BOX token and feel the benefits from the new blockchain-based system, they will push other applications they use to join ContentBox and grow the ecosystem together. 
 
 ## Complementing Advertising with Token-based Reward System
 
@@ -111,46 +171,7 @@ The value of a piece of content depends on its wide distribution. Traditionally,
 \end{wrapfigure}
 If spamming is rampant in a content network, it will take users more time to find their interested content, degrading user experience. To combat this, average users can be compensated for flagging low quality content. Flagged content can then be reviewed to decide if they actually violate community policies. It is noteworthy that different from traditional flagging, users can earn tokens and thus will be more motivated to police the community.
 
-## Lowering Content Acquisition Cost
-
-Content distributors often acquire some content (e.g., a TV show) for their platform exclusively, hoping it will generate revenue after covering cost, which is not guaranteed. In ContentBox’s framework, contents are stored in a shared data layer, accessible across different distributors.
-Content distributors pay for content by their actual, instead of projected, usage, which is recorded publicly and easily auditable and verifiable. This shared transparency will greatly reduce cost.
-
-# Technology
-
-## Why A New Platform?
-
-The current mainstream blockchain networks, such as Bitcoin and Ethereum, are not a natural fit for the digital content industry due to the following reasons: 
-
-+ **Long transaction delays & low throughput.** The digital content industry is quite different from finance or e-commerce world in terms of action frequency. Typically we might transfer our money or buy/sell goods several times a day, but on a digital content platform, a teenager might do way more actions, like streaming a song or watching a movie clip or tipping an article writer. In other words, we are expecting way larger transaction volume in the online digital content world. This trait of the digital content industry determines that current Bitcoin or Ethereum platform cannot meet the needs from real world, which leaves us no choice but to find novel solutions and build a new blockchain platform. 
-
-+ **No privacy in smart contracts.** In Ethereum all smart contracts are stored publicly on the nodes of the blockchain, which introduces severe privacy problems. Due to the visibility of the contracts, a normal streamer's taste or preferences may be detected and published to a lot of people he may not know. Likewise, a content producer might also worry that his or her profit sharing plan be searched by outsiders and leaked to the public. Furthermore, the increasing complexity of smart contracts can bring security risks. We all know what happened to DAO.
-
-+ **High transaction fees.** High transaction cost means there is no real micro-payment; and without micro-payments, fans cannot support content creators with small donations, neither can they pay for watching just an episode of a series show nor access to limited content like a VIP club. The digital content industry needs a frictionless micro-payment system to cultivate an active and healthy community. 
-
-In conclusion, current mainstream chains cannot serve as the foundation of a decentralized digital content ecosystem. To address the aforementioned challenges, CastBox will propose and lead the open source development of _BOX Chain_, a decentralized data and payment network that will benefit all the participants in the industry.
-
-## BOX Chain
-
-To make it very clear, we are NOT trying to build an upgraded Ethereum that meets any needs of various industries. Instead, the BOX Chain is built on a layered solution that aims to increase the scalability of the blockchain. While various transactions can be completed on the BOX Chain in a fast and reliable way, __the chain itself does not plan to support a general purpose Turing-complete virtual machine like EVM.__
-
-Our design of the BOX Chain follows the __UNIX philosophy__: building a large system on top of a series of simple, modular, and reliable small parts. Instead of using a large, expensive-to-verify blockchain, we use small, parallel, mobile-friendly micro chains. Using programming language metaphor, __we can view Bitcoin as the C in the blockchain realm, while Ethereum as Java; then our BOX chain can be thought of as the Go in the blockchain world__. Just like go routines in the Go language, the micro chains will be tiny in terms of physical size and will be powerful as well. The micro chains will play the most important role in our BOX Chain. 
-
-## Off-chain "Smart Contract"
-
-Since the birth of Ethereum, smart contracts have been an indispensable part for many blockchain projects. However, most contracts need only one thing from the blockchain: an immutable ordering of commitments to prevent double-spending. Therefore, we decide to move the bulk of smart contracts off the chain. Instead of using complex and resource intensive smart contracts to align the interests of stakeholders and automate payment related transactions, we aggregate simple signatures to achieve the same goal but with much higher performance. By using signature itself as a witness, we can move the bulk of transactions off-chain and leave the blockchain to do what it is really good at: check a multi-sig. 
-
-A crucial piece of this approach is Schnorr Signature[^fn1]. Unlike ECDSA, Schnorr signature has **linearity** in its math, which makes it ideal for creating "adaptor signature" that can be used in settling off-chain transactions automatically. Actually, based on the exciting progress made recently in this research area spearheaded by Andrew Poelstra, a mathematician from Blockstream, we are exploring this technology to build a light-weight but powerful blockchain that suits for the digital content industry. 
-
-## BOX Passport
-
-We are planning to build a powerful decentralized identity service called "BOX Passport", allowing the users to transact frictionlessly **across multiple apps or websites**. With the growth of the ContentBox ecosystem, a plethora of content applications are expected to be built atop ContentBox. A single user shall have a consistent identity across all of them, instead of having to create an independent identity for each application.
-
-We establish the identity by extending the wallet concept to store personal information such as reputation besides token account. This identify service is not stored in any application’s centralized databases and inherently decentralized, less vulnerable to hacks. Users have full control on their identity and decide who can access which part of it for how long. Furthermore, BOX Passport will bind a creator to his artworks transparently and permanently, which helps him to build an ongoing reputation in the digital content world.
-
-We will possibly integrate 3rd-party identity services such as Keybase[^fn3] and uPort[^fn2] into our identity service for broader interoperability.
-
-# Applications Beyond CastBox
+# Example Applications Beyond CastBox
 
 On the basis of BOX Chain and BOX Passport, many new type applications can be developed and deployed in the ContentBox ecosystem. Here we are listing a couple of simple examples. But definitely the open community will bring much more exciting applications in the future. 
 
@@ -165,11 +186,17 @@ ContentBox allows for an open, fair, and creator-centric decentralized marketpla
 + More liquidity. In music industry, for example, it could take six to eighteen months before the first royalty check arrives at an artist after a song is released. In our new marketplace, an artist can be paid automatically in tradable built-in tokens while her song is being streamed, anywhere in the world.
 + More Transparency. Since all critical information is logged in a public blockchain, an artist can know exactly how many times and when her song is streamed, how much revenue it was generating. 
 
-## Mini Crowd-funding 
+## Mini Crowd-funding Launchpad
 
 Traditionally, creators have very limited ways to fund their creative projects and rely on powerful intermediaries such as music labels and film studios, which take a significant cut of the whole pie.
 
 With ContentBox, creators can raise funding truly independently. A filmmaker can pre-sell tokens to fans to fund a film, which grant them access to the film once it is made. The crowdfunding smart contract can also include advanced features. For instance, fans can share a portion of the film revenue per their tokens. Or fans can specify funds to be gradually released, contingent on reaching production milestones. The same is applicable to other forms of creative endeavors such as music and TV shows.
+
+## Cross-app Bounty Program
+//TODO
+
+## Turn-key Solution for Small Digital Content Websites or Apps
+//TODO
 
 # Roadmap
 
@@ -259,3 +286,9 @@ https://bitcoincore.org/en/2017/03/23/schnorr-signature-aggregation/
 [^fn5]: https://itunes.apple.com/app/castbox-radio/id1243410543
 [^fn6]: https://open.weixin.qq.com/
 [^fn7]: https://play.google.com/store/apps/details?id=com.asiainno.uplive
+[^fn8]: Non-Interactive Proofs of Proof-of-Work
+\hfill\break
+https://eprint.iacr.org/2017/963.pdf
+[^fn9]: https://lightning.network/
+[^fn10]: https://raiden.network/
+[^fn11]: https://github.com/ethereum/wiki/wiki/Sharding-FAQ
