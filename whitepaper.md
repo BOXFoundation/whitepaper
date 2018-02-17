@@ -76,23 +76,36 @@ The current mainstream blockchain networks, such as Bitcoin and Ethereum, are no
 
 + **High transaction fees.** High transaction cost means there is no real micro-payment; and without micro-payments, fans cannot support content creators with small donations, neither can they pay for watching just an episode of a series show nor access to limited content like a VIP club. The digital content industry needs a frictionless micro-payment system to cultivate an active and healthy community. 
 
-In conclusion, current mainstream chains are not well suited to be the foundation of ContentBox. Admittedly, many nascent projects are claiming they can solve the problems above, but none of them has proved to be mature in production; or they lack support for privacy, or just cannot onboard enough developers and users to form a healthy ecosystem. To address the aforementioned challenges and eventually build a sustainable ecosystem for the whole digital content industry, we here propose our solution which includes three core components:
+In conclusion, current mainstream chains are not well suited to be the foundation of ContentBox. Admittedly, many nascent projects are claiming they can solve the problems above, but none of them has proved to be mature in production; or they lack support for privacy, or just cannot onboard enough developers and users to form a positive, self-growing ecosystem. To address the aforementioned challenges and eventually build a sustainable ecosystem for the whole digital content industry, we here propose an architecture which includes three core components:
 
-+ **BOX Payment Chain**. A fast and secure chain to carry out multipart contingent payments.
++ **BOX Chain**. A fast and secure blockchain to carry out multipart contingent payments.
 + **BOX Passport**. A blockchain-based identity and attribution service across multiple applications.
-+ **BOX Alliance Kit**. A turn-key solution for small and medium-sized partners to setup an audio or video platform easily and quickly. 
++ **BOX Unpack**. A turn-key solution for small and medium-sized partners to setup an audio or video platform easily and quickly. 
 
 We will elaborate on each of them in the following sections.
 
-## Design Goals and Philosophy
-//TODO
+## Design Goals and Principles
 Before we delve into the details of the core components, we would like to introduce the goals and some of the principles we followed in our design of the architecture. 
 
-Our design goals arise from the unique requirements of the digital content industry: scalability and privacy. 
+Basically, our design goals arise from the unique requirements of the digital content industry: __scalability__ and __privacy__. As noted above, these two requirements are what make the digital content industry different from other application areas and they are not well supported by current mainstream blockchains yet. 
 
-Our design of the BOX Chain follows the __UNIX philosophy__: building a large system on top of a series of simple, modular, and reliable small parts.
+To be concise, the major goals of ContentBox architecture design are: 
 
-## BOX Payment Chain
++ Scale well when the contents and users grow exponentially.
+
++ Protect privacy well when processing a multipart transaction.
+
++ Support micro-payment.
+
++ Easy to integrate into current applications.
+
+In concept, the above goals can all be achieved by designing a more powerful, full-functional, EVM-compliant blockchain. However, we would like to take another approach other than a monolithic chain system. Actually, our design of the architecture of ContentBox follows the __UNIX philosophy__: building a large system on top of a series of simple, modular, and reliable small parts, and that reflects the first design principle of us: build the system on **reliable and replaceable** parts, which can be easily debugged and upgraded. 
+
+In addition, we attempt to make the whole system **friendly to developers** throughout its design. We are fully aware that an ecosystem cannot be successful just because of its superiority in technology; more importantly, it needs to win the heart of developers and users. Therefore, another principle taken by us is to avoid reinventing the wheels, but rather embrace the today's programming world and take advantage of the proven, widely-used tech stacks.
+
+Another important principle is to keep the concepts **orthogonal**. We do not want a chain to serve two or more objectives which could make it hard to implement. Likewise, we do not want two components share some common functionalities, which could confuse many application developers. Orthogonality makes it easier to understand what happens when things combine.
+
+## BOX Chain
 
 To make it very clear, we are NOT trying to build an upgraded Ethereum that meets any needs of various industries. Instead, the BOX Chain is built on a layered solution that aims to increase the scalability of the blockchain. While various transactions can be completed on the BOX Chain in a fast and reliable way, __the chain itself does not plan to support a general purpose Turing-complete virtual machine like EVM.__
 
@@ -118,7 +131,7 @@ Based on BOX Passport, we will introduce a new feature for the ecosystem, named 
 
 We will possibly integrate 3rd-party identity services such as Keybase[^fn3] and uPort[^fn2] into our identity service for broader interoperability.
 
-## Libraries, SDK and BOX Turn-key Solutions
+## BOX Unpack
 //TODO
  
 ## Related Works
