@@ -174,40 +174,33 @@ For us, we think the basic design of Steem is quite impressive but we will not b
 
 ## Mobile Wallet
 
+\begin{wrapfigure}{r}{0.48\textwidth}
+  \centering
+  \includegraphics[width=0.36\textwidth]{images/wallet}
+  \caption{In-app light wallet}
+\end{wrapfigure}
+
 A light wallet will be integrated into CastBox application. With the built-in wallet, a user can see his balances and transaction history instantly while using the app, including the token rewards for his contribution to the CastBox community. In the future, the wallet will show balances across apps. 
 
 As a popular mobile app, CastBox is a natural host for a mobile wallet of BOX tokens. It will help onboard millions of users for ContentBox, solving one of the biggest problems when building an online ecosystem: cold start. Moreover, as CastBox is a frequently used app, the users will interact with the application multiple times a day and will get familiar with crypto token related concepts gradually. In the long run, when they are comfortable with BOX token and feel the benefits from the new blockchain-based system, they will push other applications they use to join ContentBox and grow the ecosystem together. 
 
 ## BOX Login 
 
-We will migrate the user accounts of CastBox onto the blockchain and give every user a secure universal BOX ID once the BOX Passport system is ready for production. After the migration, CastBox's backend server will no longer store the users' account and credential information. Instead, the app client will hit the blockchain to verify a user's identity during the sign-in process. 
+We will migrate the user accounts of CastBox onto the blockchain and give every user a secure universal BOX ID once the BOX Passport system is ready for production. After the migration, CastBox's backend server will no longer store the users' account and credential information. Instead, the app client will hit the blockchain to retrieve and verify a user's identity during the sign-in process. 
 
 Using BOX Passport will bring benefits to CastBox's operator and its end-users as well. Since the user authentication and authorization has bee moved from the app's servers to a public blockchain, the operator shakes off the burden of guarding hacker attacks on user information. On the other hand, the app users also gain back the control of their own data, mitigating the risk of personal data breaches. 
 
 ## In-app Token-based Reward System
 
 \begin{wrapfigure}{r}{0.48\textwidth}
-  \begin{center}
-    \includegraphics[width=0.36\textwidth]{images/channel}
-    \caption{Spending BOX on specific content}
-  \end{center}
-\end{wrapfigure}
-Current content networks like YouTube rely heavily, if not exclusively, on advertisement for monetization. Consequently, only creators of the most popular content get paid, if at all. The rest of creators, despite contributing to most content vital to the network, are never financially recognized.
-
-Using BOX, advertisers can still purchase BOX tokens to show advertisements as usual. In addition, content consumers can buy them as well for a variety of reasons. They can use them to access premium content. Or they can tip their favorite creators directly with tokens or virtual gifts purchase through tokens. No matter how large a fan base a creator has, be it 10 million or just 10, she could be economically compensated and thus is incentivized to produce more and better content, potentially bringing more fans. This positive synergy between creators and consumers has proven to boost network health and growth, as exemplified in Uplive[^fn7].
-
-## Motivating Users to Distribute Content Actively
-
-The value of a piece of content depends on its wide distribution. Traditionally, mainly content platforms actively participate. Under ContentBox, anyone disseminating content is rewarded with tokens. The larger audience she spreads the content to, the more rewards she reaps. By encouraging every user to distribute, contents can reach its viral potential.
-
-## Filtering Spams
-
-\begin{wrapfigure}{r}{0.48\textwidth}
   \centering
-  \includegraphics[width=0.36\textwidth]{images/artboard}
-  \caption{Earn BOX tokens by helping filter spams}
+  \includegraphics[width=0.36\textwidth]{images/reward}
+  \caption{Earn BOX by flagging spams}
 \end{wrapfigure}
-If spamming is rampant in a content network, it will take users more time to find their interested content, degrading user experience. To combat this, average users can be compensated for flagging low quality content. Flagged content can then be reviewed to decide if they actually violate community policies. It is noteworthy that different from traditional flagging, users can earn tokens and thus will be more motivated to police the community.
+
+Along with the light wallet, a token-based reward system will be built into CastBox as well. The reward system serves two goals mainly: incentivize the authors to create more valuable contents and motivate the users to spread good contents widely. For example, if a listener finds an interesting podcast in CastBox, submits a comment, and then shares it with his friends on social networks (such as Facebook or Twitter), he will get BOX tokens as rewards. 
+
+Users can also gain tokens for helping filter spams. Spamming is a challenge for every online community and user experience will be hurt badly if it cannot be effectively controlled. Normally a digital content platform will solve this problem by hiring more moderators or put more money on the research of AI-based algorithms aiming to filter spams automatically. However, both of these approaches are costly and inefficient in practice. Through the built-in reward system, CastBox users can be rewarded for flagging low quality content. 
 
 # Example Applications Beyond CastBox
 
