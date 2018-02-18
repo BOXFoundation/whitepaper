@@ -107,13 +107,16 @@ Another important principle is to keep the concepts **orthogonal**. We do not wa
 
 ## BOX Chain
 
+BOX Chain is NOT a blockchain that supports a general purpose Turing-complete virtual machine.
 To make it very clear, we are NOT trying to build an upgraded Ethereum that meets any needs of various industries. Instead, the BOX Chain is built on a layered solution that aims to increase the scalability of the blockchain. While various transactions can be completed on the BOX Chain in a fast and reliable way, __the chain itself does not plan to support a general purpose Turing-complete virtual machine like EVM.__
 
 Instead of using a large, expensive-to-verify blockchain, we use small, parallel, mobile-friendly micro chains. Using programming language metaphor, __we can view Bitcoin as the C in the blockchain realm, while Ethereum as Java; then our BOX chain can be thought of as the Go in the blockchain world__. Just like go routines in the Go language, the micro chains will be tiny in terms of physical size and will be powerful as well. The micro chains will play the most important role in our BOX Chain. 
 
 ### Off-chain "Smart Contract"
 
-Since the birth of Ethereum, smart contracts have been an indispensable part for many blockchain projects. However, most contracts need only one thing from the blockchain: an immutable ordering of commitments to prevent double-spending. Therefore, we decide to move the bulk of smart contracts off the chain. Instead of using complex and resource intensive smart contracts to align the interests of stakeholders and automate payment related transactions, we aggregate simple signatures to achieve the same goal but with much higher performance. By using signature itself as a witness, we can move the bulk of transactions off-chain and leave the blockchain to do what it is really good at: check a multisig. 
+Since the birth of Ethereum, smart contracts have been an indispensable part for many blockchain projects. However, most contracts need only one thing from the blockchain: an immutable ordering of commitments to prevent double-spending. Therefore, instead of using complex and resource intensive smart contracts to align the interests of stakeholders and automate payment related transactions, we can aggregate simple signatures to achieve the same goal but with much higher performance. 
+
+A set of parties can decide on some sort of contract or protocol that they want to execute, and as a result of faithful execution they will produce a valid signature and the blockchain and its verifiers can validate that the signature is valid. The blockchain does not need to know any of the details of the original transaction. By using signature itself as a witness, we can move the bulk of transactions off-chain and leave the blockchain to do what it is really good at: check a multi-signature. 
 
 ### Schnorr Signature
 
@@ -123,11 +126,11 @@ A crucial piece of this approach is Schnorr Signature[^fn1]. Unlike ECDSA, Schno
 
 ## BOX Passport
 
-We are planning to build a powerful **decentralized identity service** called "BOX Passport", allowing a user to transact frictionlessly **across multiple apps or websites** with a single digital identity and enhancing the user's privacy, security and control. With the growth of the ContentBox ecosystem, a plethora of content applications are expected to be built atop ContentBox. A single user shall have a consistent identity across all of them, instead of having to create an independent identity for each application.
+With the growth of the ContentBox ecosystem, a plethora of content applications are expected to be built atop it. A single user shall have a consistent identity across all of them, instead of having to create an independent identity for each application. Therefore, we are planning to build a powerful **decentralized interoperable identity service** called "BOX Passport". It allows a user to transact frictionlessly **across multiple apps or websites** with a single digital identity and will enhance the user's privacy, security and control as well. 
 
 We establish the identity by extending the wallet concept to store personal information such as reputation besides token account. This identify service is not stored in any application’s centralized databases and inherently decentralized, less vulnerable to hacks. Users have full control on their identity and decide who can access which part of it for how long. Furthermore, BOX Passport will bind a creator to his artworks transparently and permanently, which helps him to build an ongoing reputation in the digital content world.
 
-Based on BOX Passport, we will introduce a new feature for the ecosystem, named BOX Login, and will open it to every developer in the world. Similar to Facebook Login in concept, Box Login is a secure and convenient way for people to sign into any website, desktop app or mobile application in ContentBox ecosystem. However, BOX Login is implemented on the blockchain and will not be controlled by any single company or organization, which set it apart from today's any third-party authentication system on the world. 
+Based on BOX Passport, we will introduce a new feature for the ecosystem, named BOX Login, and will open it to every developer in the community. Similar to Facebook Login in concept, Box Login is a secure and convenient way for people to sign into any website, desktop app or mobile application in ContentBox ecosystem. However, BOX Login is implemented on the blockchain and will not be controlled by any single company or organization, which set it apart from today's any third-party authentication system on the world. 
 
 We will possibly integrate 3rd-party identity services such as Keybase[^fn3] and uPort[^fn2] into our identity service for broader interoperability.
 
@@ -144,7 +147,7 @@ A lot of blockchain developers see sharding is a promising approach to solve the
 Overall, we believe sharding still has a long way to go before it becomes a well-adopted solution to scale the blockchain. Therefore we will pay close attention to the progress in this area but will not use it as a core technology in our solution for now.
 
 ### Lighting Network and Raiden Network
-Basically, both of Lightning[^fn9] and Raiden[^fn10] network rely on off-chain state channels. The core idea here is that participants put some bitcoin or ether into a multi-signature address (open a payment channel) and then sign transactions without submitting it to the blockchain. Payment channels can be organized into a network and thus a payment between two parties can be conducted through multiple hops. The payment channel can be closed by either party at any time, and the last-signed transaction with the most up-to-date balances for both parties is the one that will be committed to the blockchain.
+Basically, both Lightning[^fn9] and Raiden[^fn10] network rely on off-chain state channels. The core idea here is that participants put some bitcoin or ether into a multi-signature address (open a payment channel) and then sign transactions without submitting it to the blockchain. Payment channels can be organized into a network and thus a payment between two parties can be conducted through multiple hops. The payment channel can be closed by either party at any time, and the last-signed transaction with the most up-to-date balances for both parties is the one that will be committed to the blockchain.
 
 Both of these two approaches can increase transaction throughput and lower fees effectively in their respective environment (one for Bitcoin and one for Ethereum) if properly implemented. However, there are still some limitations in practice. For instance, all participants of a transaction need to lock up some tokens on the chain until the channel is closed, thus discouraging a central payee to use the payment network. Another problem is the potential privacy leak on the network because the hubs may know the participant's real identity. 
 
@@ -156,14 +159,14 @@ Both of the two authors of Plasma are genius in the blockchain field and they pr
 Therefore, we view Plasma as an upgraded Ethereum and it still needs time to achieve a production level and we cannot lay the foundation of ContentBox on it now. 
 
 ### MimbleWimble
-MimbleWimble[^fn13] is a novel blockchain design proposed about a year and a half ago which can theoretically increase privacy, scalability and fungibility compared current main stream blockchains. The core idea here is that people can verify the state of the system without downloading all of the transaction data. Instead, the chain can compact the transaction history efficiently and rely on cryptographic primitives to achieve full public verifiability (which is very similar to our solution). The project has made great progress recently by launching a testnet[^fn15]. 
+MimbleWimble[^fn13] is a novel blockchain design proposed about a year and a half ago which can theoretically increase privacy, scalability and fungibility compared current main stream blockchains. The core idea here is that people can verify the state of the system without downloading all of the transaction data. Instead, the chain can compact the transaction history efficiently and rely on cryptographic primitives to achieve full public verifiability (which is very similar to our solution). The project has made great progresses recently by launching a testnet[^fn15] and integrating Bulletproofs[^fn16]. 
 
-However, the design of the project strips out the Bitcoin's scripting system, thus debilitating its power on enforcing contingent payments which is of great importance in the digital content industry. Nevertheless, MimbleWimble is a promising solution towards scaling the bitcoin and we can borrow a lot from its design and implementation, for example, the structure of transactions, the cut-through used for packing block and its ASIC-resistant mining algorithm (Cuckoo Cycle) that encourages mining decentralization.
+However, a full node of MimbleWimble still needs a lot space on disk which makes it unfriendly to mobile devices. And arguably, the design of striping out the Bitcoin's scripting system will make it hard to do soft-forking and debilitate its power on enforcing contingent payments which is of great importance in the digital content industry. Nevertheless, MimbleWimble is a promising solution towards scaling the bitcoin and we can borrow a lot from its design and implementation, for example, the structure of transactions, the cut-through used for packing block and its ASIC-resistant mining algorithm (Cuckoo Cycle) that encourages mining decentralization.
 
 ### Steem
 Steem is a blockchain for producing Smart Media Tokens which facilitate a decentralized blogging and social network: Steemit[^fn14]. By design, Steem leverages DPoS consensus protocol to achieve a high throughput of transactions. In addition, it introduced several innovative built-in features, such as Reward Pool, ChainBase, and a stake-based voting and incentivization mechanism to support the operation of Steemit.
 
-Generally, Steem is a well-designed blockchain for a social media platform with great performance and rich built-in reward and incentivization features. However, as an infrastructure, Steem is too application-specific. While supporting the operation of Steemit well, the reward and voting system also limit the use of Steem in applications other than social blogging. For example, a mobile video app might not need a voting action to determine a user's interest on a video clip; they can learn it by just observing the user's behavior like browse, view, pause, fast forward, etc. Actually, many startups are using users' behavioral data and advanced AI algorithms to rank and dispatch personalized contents.
+Generally, Steem is a well-designed blockchain for a social media platform with great performance and rich built-in features. However, as an infrastructure, Steem is too application-specific. While supporting the operation of Steemit well, the reward and voting system also limit the use of Steem in applications other than social blogging. For example, a mobile video app might not need a voting action to determine a user's interest on a video clip; they can learn it by just observing the user's behavior like browse, view, pause, fast forward, etc. Actually, many startups are using users' behavioral data and advanced AI algorithms to curate and dispatch personalized contents.
 
 For us, we think the basic design of Steem is quite impressive but we will not build ContentBox on top of it. Instead, we prefer to use the blockchain as a micro kernel of the whole system and leave the reward or voting like components to the application level to improve flexibility. And we believe our design is a better way to lay the foundation for a broader digital content industry. 
 
@@ -171,11 +174,17 @@ For us, we think the basic design of Steem is quite impressive but we will not b
 
 ## Mobile Wallet
 
-A light wallet will be integrated into CastBox application. With the built-in wallet, a user can see his balances and transaction history instantly while using the app, including the token rewards for his contribution to the CastBox community. In the future, the wallet will show balances across apps after the implementation and deployment of BOX Passport. 
+A light wallet will be integrated into CastBox application. With the built-in wallet, a user can see his balances and transaction history instantly while using the app, including the token rewards for his contribution to the CastBox community. In the future, the wallet will show balances across apps. 
 
-As a popular mobile app, CastBox is a natural host for a mobile wallet of BOX tokens. It will help millions of users onboard ContentBox, solving one of the biggest problems when building an online ecosystem: cold-start. Moreover, as CastBox is high-frequent app, its users will interact with the application multiple times a day and will get familiar with crypto token related concepts gradually. In the long run, when they are comfortable with BOX token and feel the benefits from the new blockchain-based system, they will push other applications they use to join ContentBox and grow the ecosystem together. 
+As a popular mobile app, CastBox is a natural host for a mobile wallet of BOX tokens. It will help onboard millions of users for ContentBox, solving one of the biggest problems when building an online ecosystem: cold start. Moreover, as CastBox is a frequently used app, the users will interact with the application multiple times a day and will get familiar with crypto token related concepts gradually. In the long run, when they are comfortable with BOX token and feel the benefits from the new blockchain-based system, they will push other applications they use to join ContentBox and grow the ecosystem together. 
 
-## Complementing Advertising with Token-based Reward System
+## BOX Login 
+
+We will migrate the user accounts of CastBox onto the blockchain and give every user a secure universal BOX ID once the BOX Passport system is ready for production. After the migration, CastBox's backend server will no longer store the users' account and credential information. Instead, the app client will hit the blockchain to verify a user's identity during the sign-in process. 
+
+Using BOX Passport will bring benefits to CastBox's operator and its end-users as well. Since the user authentication and authorization has bee moved from the app's servers to a public blockchain, the operator shakes off the burden of guarding hacker attacks on user information. On the other hand, the app users also gain back the control of their own data, mitigating the risk of personal data breaches. 
+
+## In-app Token-based Reward System
 
 \begin{wrapfigure}{r}{0.48\textwidth}
   \begin{center}
@@ -221,12 +230,10 @@ Traditionally, creators have very limited ways to fund their creative projects a
 
 With ContentBox, creators can raise funding truly independently. A filmmaker can pre-sell tokens to fans to fund a film, which grant them access to the film once it is made. The crowdfunding smart contract can also include advanced features. For instance, fans can share a portion of the film revenue per their tokens. Or fans can specify funds to be gradually released, contingent on reaching production milestones. The same is applicable to other forms of creative endeavors such as music and TV shows.
 
-## Cross-app Bounty Program
-//TODO
-Bounty program is a means to recruit community members to finish small tasks in exchange for a reward. Today, more and more startups, or even big companies, are using bounty program to promote a new product or complete temporary jobs. However, it could be very challenging for a team to start and manage a bounty program across many websites, apps and forums. On the other hand, bounty hunters 
+## Cross-platform On-demand Video Player 
+Traditionally, a multimedia player is just a decoder for many multimedia formats. However, with ContentBox, a new type of player can be developed. In addition to playing a video clip on user's device, the new player can also collect BOX tokens in real-time and distribute them among the IP owners, streaming platform and storage providers according to a pre-defined smart contract automatically. 
 
-## Turn-key Solution for Small Digital Content Websites or Apps
-//TODO
+The core ability of this new player is to interact with our BOX Chain and BOX Passport. Aided by these core components of ContentBox, the player can tap into the vast shared pool of genuine contents and enhance the user experience in video-on-demand greatly. Without the infrastructures provided by ContentBox, this new kind of software is unthinkable. 
 
 # Roadmap
 
@@ -326,3 +333,4 @@ https://eprint.iacr.org/2017/963.pdf
 [^fn13]: https://github.com/mimblewimble/grin
 [^fn14]: https://steemit.com/
 [^fn15]: https://www.coindesk.com/magical-realism-mimblewimble-just-launched-first-testnet/
+[^fn16]: http://web.stanford.edu/~buenz/pubs/bulletproofs.pdf
