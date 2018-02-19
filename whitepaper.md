@@ -76,7 +76,7 @@ The current mainstream blockchain networks, such as Bitcoin and Ethereum, are no
 
 + **High transaction fees.** High transaction cost means there is no real micro-payment; and without micro-payments, fans cannot support content creators with small donations, neither can they pay for watching just an episode of a series show nor access to limited content like a VIP club. The digital content industry needs a frictionless micro-payment system to cultivate an active and positive community. 
 
-In conclusion, current mainstream chains are not well suited to be the foundation of ContentBox. Admittedly, many nascent projects are claiming they can solve the problems above, but none of them has proved to be mature in production; or they lack support for privacy, or just cannot onboard enough developers and users to form a positive, self-growing ecosystem. To address the aforementioned challenges and eventually build a sustainable ecosystem for the whole digital content industry, we here propose an architecture which includes three key components:
+In conclusion, current mainstream chains are not well suited to be the foundation of ContentBox. Admittedly, many nascent projects are claiming they can solve the problems above, but none of them has proved to be mature in production; or they lack support for privacy, or just cannot onboard enough developers and users to form a positive, self-growing ecosystem. To address the aforementioned challenges and eventually build a sustainable ecosystem for the whole digital content industry, we here propose an architecture which consists of three main components:
 
 + **BOX Payout**. A fast and secure blockchain to carry out multipart contingent payments.
 + **BOX Passport**. A blockchain-based identity and attribution service across multiple applications.
@@ -115,8 +115,9 @@ Another important principle is to keep the concepts **orthogonal**. We do not wa
 ## BOX Payout
 //TODO
 
-BOX Payout is NOT a blockchain that supports a general purpose Turing-complete virtual machine.
-To make it very clear, we are NOT trying to build an upgraded Ethereum that meets any needs of various industries. Instead, the BOX Chain is built on a layered solution that aims to increase the scalability of the blockchain. While various transactions can be completed on the BOX Chain in a fast and reliable way, __the chain itself does not plan to support a general purpose Turing-complete virtual machine like EVM.__
+BOX Payout is NOT a blockchain that supports a general purpose Turing-complete virtual machine. Instead, its main purpose is to support fast and secure conditional transactions which is of great importance in a blockchain-based decentralized digital contents world. 
+
+A typical conditional transaction is like this: if movie X is about to be streamed on platform P to user A, tokens should be paid from A to movie X's IP owner S if S can proof he does own the copyright of X, and to platform P to get the access key for X.
 
 Instead of using a large, expensive-to-verify blockchain, we use small, parallel, mobile-friendly micro chains. Using programming language metaphor, __we can view Bitcoin as the C in the blockchain realm, while Ethereum as Java; then our BOX chain can be thought of as the Go in the blockchain world__. Just like go routines in the Go language, the micro chains will be tiny in terms of physical size and will be powerful as well. The micro chains will play the most important role in our BOX Chain. 
 
@@ -131,6 +132,7 @@ A set of parties can decide on some sort of contract or protocol that they want 
 A crucial piece of this approach is Schnorr Signature[^fn1]. Unlike ECDSA, Schnorr signature has **linearity** in its math, which makes it ideal for creating "adaptor signature" that can be used in settling off-chain transactions automatically. Actually, based on the exciting progress made recently in this research area spearheaded by Andrew Poelstra, a mathematician from Blockstream, we are exploring this technology to build a light-weight but powerful blockchain that suits for the digital content industry. 
 
 ### Micro Chains
+//TODO
 
 ## BOX Passport
 
@@ -143,8 +145,20 @@ Based on BOX Passport, we will introduce a new feature for the ecosystem, named 
 We will possibly integrate 3rd-party identity services such as Keybase[^fn3] and uPort[^fn2] into our identity service for broader interoperability.
 
 ## BOX Unpack
-//TODO
-BOX Unpack is the application interface of ContentBox, including a series of libraries, SDKs, command line and web-based tools to assist the existing content service providers and general developers who want to build next-generation digital content app on ContentBox. 
+
+### Application Interface
+
+BOX Unpack is the application interface of ContentBox, including a series of libraries, SDKs, command line and web-based tools aiming to assist potential partners and general developers to build next-generation digital content applications. Unlike Ethereum, BOX Unpack does not require the developers to learn a new programming language to write smart contracts, instead, it prefers to allowing the developers to integrate blockchain related services easily and intuitively with their familiar languages: Java, Go, Python, etc. 
+
+The major functionalities of BOX Unpack include: sign up and log in with BOX Passport, build and commit transactions on BOX Payout, upload and register digital contents, account migration and aggregation, and a set of tools to manage the contents on the blockchain. In particular, BOX Unpack also encapsulates a few AI-based algorithms developed in-house at CastBox into reusable modules which can help developers implement some advanced features on a decentralized application:
+
++ **In-audio Search.** It is a novel search technology introduced by CastBox recently that allows the user to find the content he wants to hear in a more efficient way. Traditionally, audio search is implemented by crawling tags and title descriptions which are often manipulated by some savvy podcasters (we can see similar things occurred in App Store SEO). But CastBox implements it in a new way: it uses its Natural Language Processing (NLP) algorithm to transcribe spoken audio content, combined with machine learning to surface personalized results tailored to each user’s search and listening habits. By using this technology, ContentBox application developers can develop a fast and intelligent search engine which can help users discover interesting contents across multiple digital content platforms.
+
++ **Deep learning based recommendation engine.** The recommendation engine in CastBox is built on the basis of a wide & deep model used in Google Play[^fn17] along with a denoising autoencoder developed in house. Compared with traditional recommendation models, deep learning techniques provide a better understanding of user's demands and high-quality recommendations. Leveraging this technology, combined with the blockchain libraries provided by BOX Unpack, developers can build an unprecedented recommendation engine for every user on the ContentBox platform. 
+
+### Turn-key Solution
+
+Besides the developer tools mentioned above, BOX Unpack also provides a turn-key solution for small startups who want to provide digital content services to the users but lack of the fund or technology to set up a full-fledged online platform. Just imagine a small team who want to create a new video app with an outstanding player they just developed, the first challenge facing them will be the high copyrights purchase costs. With the turn-key solution, this team can overcome the copyright hurdle by setting up revenue sharing scheme easily without programming any smart contract. We believe the turn-key solution will dramatically lower the entry barrier for potential partners to join and grow ContentBox.
  
 ## Related Works
 
@@ -207,7 +221,7 @@ Using BOX Passport will bring benefits to CastBox's operator and its end-users a
   \caption{Earn BOX by flagging spams}
 \end{wrapfigure}
 
-Along with the light wallet, a token-based reward system will be built into CastBox as well. The reward system serves two goals mainly: incentivize the authors to create more valuable contents and motivate the users to spread good contents widely. For example, if a listener finds an interesting podcast in CastBox, submits a comment, and then shares it with his friends on social networks (such as Facebook or Twitter), he will get BOX tokens as rewards. 
+Along with the light wallet, a token-based reward system will be built into CastBox as well. The reward system serves two goals mainly: incentivize the authors to create more valuable contents and motivate the users to curate and spread good contents. For example, if a listener finds an interesting podcast in CastBox, submits a comment, and then shares it with his friends on social networks (such as Facebook or Twitter), he will get BOX tokens as rewards. 
 
 Users can also gain tokens for helping filter spams. Spamming is a challenge for every online community and user experience will be hurt badly if it cannot be effectively controlled. Normally a digital content platform will solve this problem by hiring more moderators or put more money on the research of AI-based algorithms aiming to filter spams automatically. However, both of these approaches are costly and inefficient in practice. Through the built-in reward system, CastBox users can be rewarded for flagging low quality content. 
 
@@ -232,10 +246,10 @@ Traditionally, creators have very limited ways to fund their creative projects a
 
 With ContentBox, creators can raise funding truly independently. A filmmaker can pre-sell tokens to fans to fund a film, which grant them access to the film once it is made. The crowdfunding smart contract can also include advanced features. For instance, fans can share a portion of the film revenue per their tokens. Or fans can specify funds to be gradually released, contingent on reaching production milestones. The same is applicable to other forms of creative endeavors such as music and TV shows.
 
-## Cross-platform On-demand Video Player 
+## Cross-service On-demand Video Player 
 Usually a media player is just a desktop or mobile software that can decoder many multimedia file formats. However, a new type of player can be developed with ContentBox. Besides the function to play a video clip on user's device, the new player can allow its users to search on a wide range of digital movies registered on ContentBox platform, although they are possibly hosted on different server farms owned by various partners of ContentBox. While streaming, the player can also collect BOX tokens in real-time and distribute them among the IP owners, streaming platform and storage providers according to a pre-defined smart contract automatically. 
 
-The core ability of this new player is to interact with our BOX Chain and BOX Passport. Aided by these core components of ContentBox, the player can tap into the vast shared pool of genuine contents and enhance the user experience in video-on-demand greatly. Without the infrastructures provided by ContentBox, this new kind of software is unthinkable. 
+The core ability of this new player is to interact with our BOX Payout and BOX Passport. Aided by these core components of ContentBox, the player can tap into the vast shared pool of genuine contents and enhance the user experience in video-on-demand greatly. Without the infrastructures provided by ContentBox, this new kind of software is unthinkable. 
 
 # Roadmap
 
@@ -276,7 +290,7 @@ Percentage | Item |
 
 # Team
 
-+ **Renee Wang** - Founder of CastBox and CEO. The No.7 employee of Umeng, and ex-Googler.  At Google, Ms. Wang took charge of China AdMob longtail inventory, and drove Torso AdMob revenue via acquisition, optimization and better publisher engagement. Contributed to 42% of global A-Team new revenue in mobile app, which is 7 times on average of a full-time employee's performance in Acceleration team. Peking University Class of 2009.
++ **Renee Wang** - Founder and CEO of CastBox. Renee founded CastBox in 2016, and has spearheaded meteoric rise over the past two years. Throughout this period, she has not only built a global team of 50 talents but has closed more than $30 million dollars worth of investments. Renee was a part of the global mobile advertisement team for Google Beijing, Google Dublin and Google Japan. She was the 7th employee and Android engineer at Umeng, a China-based startup acquired by Alibaba, and was one of the earliest Android developers in 2008. Renee has a Bachelor's degree in Psychology from Peking University.
 
 + **Hu Gang** - Chief Crypto Officer and ContentBox CTO. Gang is a serial entrepreneur, system architect and full-stack engineer with more than a decade of experience in building web and mobile applications. He earned his Master's degree in Computer Science from Peking University in 2002. He also earned his MBA from Duke University. He was previously a partner and CTO at 5miles, a leading mobile e-commerce app in US with millions of daily active users.
 
@@ -337,3 +351,4 @@ https://eprint.iacr.org/2017/963.pdf
 [^fn14]: https://steemit.com/
 [^fn15]: https://www.coindesk.com/magical-realism-mimblewimble-just-launched-first-testnet/
 [^fn16]: http://web.stanford.edu/~buenz/pubs/bulletproofs.pdf
+[^fn17]: https://arxiv.org/abs/1606.07792
