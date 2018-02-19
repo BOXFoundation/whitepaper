@@ -74,13 +74,20 @@ The current mainstream blockchain networks, such as Bitcoin and Ethereum, are no
 
 + **No privacy in smart contracts.** In Ethereum all smart contracts are stored publicly on the nodes of the blockchain, which introduces severe privacy problems. Due to the visibility of the contracts, a normal streamer's taste or preferences may be detected and published to a lot of people he may not know. Likewise, a content producer might also worry that his or her profit sharing plan be searched by outsiders and leaked to the public. Furthermore, the increasing complexity of smart contracts can bring security risks as demonstrated by DAO.
 
-+ **High transaction fees.** High transaction cost means there is no real micro-payment; and without micro-payments, fans cannot support content creators with small donations, neither can they pay for watching just an episode of a series show nor access to limited content like a VIP club. The digital content industry needs a frictionless micro-payment system to cultivate an active and healthy community. 
++ **High transaction fees.** High transaction cost means there is no real micro-payment; and without micro-payments, fans cannot support content creators with small donations, neither can they pay for watching just an episode of a series show nor access to limited content like a VIP club. The digital content industry needs a frictionless micro-payment system to cultivate an active and positive community. 
 
-In conclusion, current mainstream chains are not well suited to be the foundation of ContentBox. Admittedly, many nascent projects are claiming they can solve the problems above, but none of them has proved to be mature in production; or they lack support for privacy, or just cannot onboard enough developers and users to form a positive, self-growing ecosystem. To address the aforementioned challenges and eventually build a sustainable ecosystem for the whole digital content industry, we here propose an architecture which includes three core components:
+In conclusion, current mainstream chains are not well suited to be the foundation of ContentBox. Admittedly, many nascent projects are claiming they can solve the problems above, but none of them has proved to be mature in production; or they lack support for privacy, or just cannot onboard enough developers and users to form a positive, self-growing ecosystem. To address the aforementioned challenges and eventually build a sustainable ecosystem for the whole digital content industry, we here propose an architecture which includes three key components:
 
-+ **BOX Chain**. A fast and secure blockchain to carry out multipart contingent payments.
++ **BOX Payout**. A fast and secure blockchain to carry out multipart contingent payments.
 + **BOX Passport**. A blockchain-based identity and attribution service across multiple applications.
 + **BOX Unpack**. A turn-key solution for small and medium-sized partners to setup an audio or video platform easily and quickly. 
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{images/overview}
+    \caption{Overview of ContentBOX Architecture}
+  \end{center}
+\end{figure}
 
 We will elaborate on each of them in the following sections.
 
@@ -105,9 +112,10 @@ In addition, we attempt to make the whole system **friendly to developers** thro
 
 Another important principle is to keep the concepts **orthogonal**. We do not want a chain to serve two or more objectives which could make it hard to implement. Likewise, we do not want two components share some common functionalities, which could confuse many application developers. Orthogonality makes it easier to understand what happens when things combine.
 
-## BOX Chain
+## BOX Payout
+//TODO
 
-BOX Chain is NOT a blockchain that supports a general purpose Turing-complete virtual machine.
+BOX Payout is NOT a blockchain that supports a general purpose Turing-complete virtual machine.
 To make it very clear, we are NOT trying to build an upgraded Ethereum that meets any needs of various industries. Instead, the BOX Chain is built on a layered solution that aims to increase the scalability of the blockchain. While various transactions can be completed on the BOX Chain in a fast and reliable way, __the chain itself does not plan to support a general purpose Turing-complete virtual machine like EVM.__
 
 Instead of using a large, expensive-to-verify blockchain, we use small, parallel, mobile-friendly micro chains. Using programming language metaphor, __we can view Bitcoin as the C in the blockchain realm, while Ethereum as Java; then our BOX chain can be thought of as the Go in the blockchain world__. Just like go routines in the Go language, the micro chains will be tiny in terms of physical size and will be powerful as well. The micro chains will play the most important role in our BOX Chain. 
@@ -136,15 +144,16 @@ We will possibly integrate 3rd-party identity services such as Keybase[^fn3] and
 
 ## BOX Unpack
 //TODO
+BOX Unpack is the application interface of ContentBox, including a series of libraries, SDKs, command line and web-based tools to assist the existing content service providers and general developers who want to build next-generation digital content app on ContentBox. 
  
 ## Related Works
 
 ### Sharding
-Similar to database sharding in traditional software system, sharding on blockchain is an approach to improve system scalability. The key idea to split the overall state of the chain into different shards, and each shard only process a small part of the state and does so in parallel[^fn11]. 
+Similar to database sharding in traditional database software system, such as MySQL, sharding on blockchain is an approach to improve system scalability. The key idea to split the overall state of the chain into different shards, and each shard only process a small part of the state and does so in parallel[^fn11]. 
 
 A lot of blockchain developers see sharding is a promising approach to solve the chain's scalability problem, and many blockchain projects based their solution on this technology. However, we are a little bit more conservative on its fully implementation on the main net in the recent future. Basically, sharding the blockchain wants to create a network where every node only processes a small portion of all transactions, while still maintaining high security. A fast and secure solution on this problem is not easy to find because a transaction executed on the blockchain can depend on any part of the previous state in the blockchain, which makes it difficult to do things in parallel. And inter-shard messaging could be challenging as well. 
 
-Overall, we believe sharding still has a long way to go before it becomes a well-adopted solution to scale the blockchain. Therefore we will pay close attention to the progress in this area but will not use it as a core technology in our solution for now.
+Overall, we believe sharding still has a long way to go before becoming a widely accepted solution to scale the blockchain. We will pay close attention to the progress in this area but will not use it as a core technology in our solution for now.
 
 ### Lighting Network and Raiden Network
 Basically, both Lightning[^fn9] and Raiden[^fn10] network rely on off-chain state channels. The core idea here is that participants put some bitcoin or ether into a multi-signature address (open a payment channel) and then sign transactions without submitting it to the blockchain. Payment channels can be organized into a network and thus a payment between two parties can be conducted through multiple hops. The payment channel can be closed by either party at any time, and the last-signed transaction with the most up-to-date balances for both parties is the one that will be committed to the blockchain.
@@ -224,7 +233,7 @@ Traditionally, creators have very limited ways to fund their creative projects a
 With ContentBox, creators can raise funding truly independently. A filmmaker can pre-sell tokens to fans to fund a film, which grant them access to the film once it is made. The crowdfunding smart contract can also include advanced features. For instance, fans can share a portion of the film revenue per their tokens. Or fans can specify funds to be gradually released, contingent on reaching production milestones. The same is applicable to other forms of creative endeavors such as music and TV shows.
 
 ## Cross-platform On-demand Video Player 
-Traditionally, a multimedia player is just a decoder for many multimedia formats. However, with ContentBox, a new type of player can be developed. In addition to playing a video clip on user's device, the new player can also collect BOX tokens in real-time and distribute them among the IP owners, streaming platform and storage providers according to a pre-defined smart contract automatically. 
+Usually a media player is just a desktop or mobile software that can decoder many multimedia file formats. However, a new type of player can be developed with ContentBox. Besides the function to play a video clip on user's device, the new player can allow its users to search on a wide range of digital movies registered on ContentBox platform, although they are possibly hosted on different server farms owned by various partners of ContentBox. While streaming, the player can also collect BOX tokens in real-time and distribute them among the IP owners, streaming platform and storage providers according to a pre-defined smart contract automatically. 
 
 The core ability of this new player is to interact with our BOX Chain and BOX Passport. Aided by these core components of ContentBox, the player can tap into the vast shared pool of genuine contents and enhance the user experience in video-on-demand greatly. Without the infrastructures provided by ContentBox, this new kind of software is unthinkable. 
 
@@ -238,8 +247,9 @@ The CastBox and ContentBox technical roadmaps include the following milestones:
 - 2017.10 Deep in-audio search feature launched
 - 2018.02 Token sale
 - 2018.06 Token integrated into CastBox app
-- 2018.12 Testnet of BOX Chain online 
-- 2019.06 Launch BOX Chain V1.0 
+- 2018.12 Launch of BOX Passport 
+- 2019.03 Testnet of BOX Chain online 
+- 2019.09 Launch of BOX Chain Mainnet
 
 # Token Distribution
 
