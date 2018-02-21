@@ -76,7 +76,7 @@ The current mainstream blockchain networks, such as Bitcoin and Ethereum, are no
 
 + **High transaction fees.** High transaction cost means there is no real micro-payment; and without micro-payments, fans cannot support content creators with small donations, neither can they pay for watching just an episode of a series show nor access to limited content like a VIP club. The digital content industry needs a frictionless micro-payment system to foster an active and positive community. 
 
-In conclusion, current mainstream chains are not well suited to be the basis of ContentBox. Admittedly, many nascent projects are claiming they can solve the problems above, but none of them has proved to be mature in production; or they lack support for privacy, or just cannot onboard enough developers and users to form a positive, self-growing ecosystem. To address the aforementioned challenges and eventually build a sustainable ecosystem for the whole digital content industry, we here propose an architecture which consists of three main components:
+In conclusion, current mainstream chains do not suit the needs of ContentBox. Admittedly, many nascent projects are claiming they can solve the problems above, but none of them has proved to be mature in production; or they lack support for privacy, or just cannot onboard enough developers and users to form a positive, self-growing ecosystem. To address the aforementioned challenges and eventually build a sustainable ecosystem for the whole digital content industry, we here propose an architecture which consists of three main components:
 
 + **BOX Payout**. A fast and secure blockchain to carry out multipart contingent payments.
 + **BOX Passport**. A blockchain-based identity and attribution service across multiple applications.
@@ -249,7 +249,7 @@ Users can also gain tokens for helping filter spams. Spamming is a challenge for
 
 On the basis of BOX Chain and BOX Passport, many new type applications can be developed and deployed in the ContentBox ecosystem. Here we are listing a couple of simple examples. But definitely the open community will bring much more exciting applications in the future. 
 
-## Decentralized Content Marketplace
+## Content Marketplace without Middleman
 
 Control of content distribution is concentrated in a few centralized marketplaces such as iTunes. 
 These marketplaces unilaterally determine how creators are paid. As a result, the vast majority of the creators globally are greatly underpaid, if paid at all.
@@ -260,11 +260,11 @@ ContentBox allows for an open, fair, and creator-centric decentralized marketpla
 + More liquidity. In music industry, for example, it could take six to eighteen months before the first royalty check arrives at an artist after a song is released. In our new marketplace, an artist can be paid automatically in tradable built-in tokens while her song is being streamed, anywhere in the world.
 + More Transparency. Since all critical information is logged in a public blockchain, an artist can know exactly how many times and when her song is streamed, how much revenue it was generating. 
 
-## Mini Crowd-funding Launchpad
+## Decentralized "AdSense" for Content Platforms
 
-Traditionally, creators have very limited ways to fund their creative projects and rely on powerful intermediaries such as music labels and film studios, which take a significant cut of the whole pie.
+AdSense is a program run by Google that allows publishers in the Google Network of content sites to serve automatic text or multimedia advertisements, that are targeted to site content and audience. With ContentBox, we can run a similar program just like AdSense to facilitate transactions between advertisers and content publishers. But unlike Google AdSense, this program is based on public blockchains instead of a central giant platform like Google. Ads inventory can be organized on a decentralized file system like IPFS, and the dispatch engine can be developed by leveraging the modules provided by BOX Unpack. And the monetization and payments can be made via BOX Payout. 
 
-With ContentBox, creators can raise funding truly independently. A filmmaker can pre-sell tokens to fans to fund a film, which grant them access to the film once it is made. The crowdfunding smart contract can also include advanced features. For instance, fans can share a portion of the film revenue per their tokens. Or fans can specify funds to be gradually released, contingent on reaching production milestones. The same is applicable to other forms of creative endeavors such as music and TV shows.
+Compared with Google AdSense, this decentralized program can provide a more transparent and reliable service. Without a central authority, all parties enjoy more flexibility; advertisers pay less in fees, and publishers receive higher payouts.
 
 ## Cross-service On-demand Video Player 
 Usually a media player is just a desktop or mobile software that can decoder many multimedia file formats. However, a new type of player can be developed with ContentBox. Besides the function to play a video clip on user's device, the new player can allow its users to search on a wide range of digital movies registered on ContentBox platform, although they are possibly hosted on different server farms owned by various partners of ContentBox. While streaming, the player can also collect BOX tokens in real-time and distribute them among the IP owners, streaming platform and storage providers according to a pre-defined smart contract automatically. 
