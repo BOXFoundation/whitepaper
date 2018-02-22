@@ -26,17 +26,19 @@ During the past years, we witness the explosive growth of the digital content in
 + **Content creators struggling to profit from their own creation.** It is extremely difficult to monetize one's created content online. On many content platforms such as YouTube and Instagram, users create all content, from which platforms profit enormously by selling advertisement. However, the vast majority of  creators share no profit at all for their indispensable contributions. In addition, when creators do get paid for their content, layers of intermediaries siphon off a majority share. Creators are in weak position and lack bargain power when deciding monetization and payout. It is not surprising platforms take most of the revenue and creators only collect a small part of the pie. For instance, when a song is streamed, only about 15% of the sales income goes to its creators, the bulk goes to streaming services and record labels.
 
 + **Content consumers not rewarded for their contributions.** Consumers engage in a wide variety of activities vital to content platforms, but are never financially recognized.
-*Curation: users spend valuable time and energy to collectively curate (e.g., like/vote/flag/comment) content, filtering low quality content from high quality one; yet, receive no compensation. They are commercially exploited by powerful platforms (e.g., YouTube) at the appearance of free services.
-*Share: sharing within or outside a content platform (e.g., sharing a YouTube video to followers on YouTube or Facebook) brings more visibility to content and attracts more traffic to the platform.
-*Attention: the Internet is flooded with all types of digital content with greatly varying qualities, what is scarce is no longer content per se, but a user’s attention. User spending limited attention on content, including advertisement, is valuable.
+*Curation*: users spend valuable time and energy to collectively curate (e.g., like/vote/flag/comment) content, filtering low quality content from high quality one; yet, receive no compensation. They are commercially exploited by powerful platforms (e.g., YouTube) at the appearance of free services.
+*Share*: sharing within or outside a content platform (e.g., sharing a YouTube video to followers on YouTube or Facebook) brings more visibility to content and attracts more traffic to the platform.
+*Attention*: the Internet is flooded with all types of digital content with greatly varying qualities, what is scarce is no longer content per se, but a user’s attention. User spending limited attention on content, including advertisement, is valuable.
 
 + **Lack of transparency.** Key information about who consumes what content and when (including advertisement) is locked in proprietary data silos.
-This lack of information is one reason for fierce competition between big dominating distributors. They often have to bid for exclusive rights of popular content with insanely high prices, driving up the acquisition cost and suffering from the so called winner’s curse. At the same time, small and medium-sized distributors cannot afford over-priced content and have no choice but to resort to low quality content.
-Advertisers also feel opaque in what they are paying for. They pay in the form of CPM and have to trust distributors for advertisement viewership. They bid for users’ attention on a centralized platform and suffer from the snowballing marketing cost as well. Their spending is largely obscured by the platform and their link to end users is fragile and vulnerable, contingent upon their relationship with the centralized distributor.
+This lack of information is one reason for fierce competition between big dominating distributors. They often have to bid for exclusive rights of popular content with insanely high prices, driving up the acquisition cost and suffering from the so called winner’s curse. At the same time, small and medium-sized distributors cannot afford over-priced content and have no choice but to resort to low quality or pirated content.
+Advertisers also feel opaque in what they are paying for. They bid for users’ attention on a centralized platform and suffer from the snowballing marketing cost as well. Their spending is largely obscured by the platform and their link to end users is fragile and vulnerable, contingent upon their relationship with the centralized distributor.
 
 ## A Blockchain-based Ecosystem: ContentBox
 
-Our solution to the problems mentioned above is a blockchain-based ecosystem ContentBox, providing a unified payout system. Unlike traditional open platforms such as App Store or WeChat Open Platform[^fn6], ContentBox is fully __decentralized, autonomous, and driven by the open source community instead of an industry giant__. By leveraging the blockchain as an open, immutable, distributed, trustless, and temper-proof ledger, web and mobile content platforms can share content (including advertisement) consumption statistics without ceding control to a third party.
+Our solution to the problems mentioned above is a blockchain-based ecosystem: ContentBox, which provides the whole industry with three unprecedented characteristics: **a shared content pool, a shared user pool, and a unified payout system**. 
+
+Unlike traditional open platforms such as App Store or WeChat Open Platform[^fn6], ContentBox is fully __decentralized, autonomous, and driven by the open source community instead of an industry giant__. By leveraging the blockchain as an open, immutable, distributed, trustless, and temper-proof ledger, web and mobile content platforms can share content (including advertisement) consumption statistics without ceding control to a third party.
 
 In principle, ContentBox is designed to benefit all stakeholders in the industry including, but are not limited to, creators, consumers, advertisers, distributors, and application developers. It allows them to collaborate, innovate, build, and engage new generation of digital content applications that play on fair terms. 
 
@@ -50,7 +52,7 @@ For distributors, they can together build a shared content statistics ledger whi
 
 For application developers, they can easily integrate blockchain-enabled token and smart contract into their existing or to be built applications. ContentBox will provide developers with easy-to-use, well documented, and modular SDK and libraries for leveraging blockchain technology in their applications seamlessly.
 
-By opening the black box digital content industry is today, the whole industry, including all stakeholders, can flourish with cooperation and transparency by collaboratively building a new content economy.
+By opening the black box digital content industry is today, the whole industry, including all stakeholders, can flourish with cooperation and transparency by collaboratively building a new content economy. Furthermore, to foster the collaboration of all stakeholders, ContentBox will introduce a new token, named __BOX__, which will play a key role in the ecosystem's economy. 
 
 ## About CastBox
 
@@ -67,7 +69,7 @@ Founded in early 2016 by an ex-Googler, the application currently has over 50 mi
 
 ## The Foundation
 
-To oversee the growth of the ContentBox Ecosystem, we have set up an entity the Contentbox Foundation in Singapore. The Foundation will administer the use of the proceeds and ensure the healthy circulation of the BOX token. Our ultimate goal is to build a fully decentralized and autonomous ecosystem for the digital content industry. Therefore, we would like to make the governance and operation of the Foundation as transparent as possible. As a matter of fact, we are planning to __build the Foundation as a totally software defined organization in the future__. 
+A non-profit organization, Contentbox foundation ("the Foundation"), has been set up to oversee the productive and positive growth of the new ContentBox ecosystem. The Foundation will administer the use of the proceeds and ensure the healthy circulation of the BOX token. As the ultimate goal of ContentBox is to build a fully decentralized and autonomous ecosystem for the digital content industry, the governance and operation of the Foundation will be kept as transparent as possible. In the long run, __the Foundation will be transformed to a totally software defined organization__. 
 
 As the founding member of the Foundation, CastBox will pioneer the transition from a centralized app to a decentralized blockchain-based app and introduce BOX to its tens of millions of users. In the near future, CastBox will also open source the vast majority of its currently proprietary codebase after it integrates BOX into the app successfully, encouraging the open source community to drive the evolution of ContentBox.
 
@@ -96,24 +98,24 @@ In conclusion, current mainstream chains do not suit the needs of ContentBox. Ad
   \end{center}
 \end{figure}
 
-We will elaborate on each of them in the following sections.
+The above components will be elaborated in the following sections.
 
 ## Design Goals and Principles
-Before we delve into the details of the core components, we would like to introduce the goals and some of the principles we followed in our design of the architecture. 
+Before delving into the details of the core components, we would like to introduce the goals and some of the principles followed in the design of ContentBox. 
 
-To be concise, the major goals of ContentBox architecture design are: 
+To be concise, the major design goals of ContentBox architecture are: 
 
 + Scale well when the contents and users grow exponentially.
 
-+ Protect privacy well when processing a multipart transaction.
++ Protect privacy well when processing multiparty transactions.
 
 + Support micro-payment.
 
-+ Easy to integrate into current applications.
++ Easy to integrate with current applications.
 
-In concept, the above goals can all be achieved by designing a more powerful, full-functional, EVM-compliant blockchain. However, we would like to take another approach other than a monolithic chain system. Actually, our design of the architecture of ContentBox follows the __UNIX philosophy__: building a large system on top of a series of simple, modular, and reliable small parts, and that reflects the first design principle of us: build the system on **reliable and replaceable** parts, which can be easily debugged and upgraded. 
+In concept, the above goals can all be achieved by designing a more powerful, full-functional, EVM-compliant blockchain. However, ContentBox plans to take another approach other than a monolithic chain system. Actually, the design of ContentBox follows the __UNIX philosophy__: building a large system on top of a series of simple, modular, and reliable small parts, and that reflects the first design principle of us: build the system on **reliable and replaceable** parts, which can be easily debugged and upgraded. 
 
-In addition, we attempt to make the whole system **friendly to developers** throughout its design. We are fully aware that an ecosystem cannot be successful just because of its superiority in technology; more importantly, it needs to win the heart of developers and users. Therefore, another principle taken by us is to avoid reinventing the wheels, but rather embrace the today's programming world and take advantage of the proven, widely-used tech stacks.
+In addition, ContentBox attempts to make the whole system **friendly to developers** throughout its design. An ecosystem cannot be successful just because of its superiority in technology; more importantly, it needs to win the heart of developers and users. Therefore, another principle applied throughout ContentBox is to avoid reinventing the wheels, but rather embrace the today's programming world and take advantage of the proven, widely-used tech stacks.
 
 Another important principle is to keep the concepts **orthogonal**. We do not want a chain to serve two or more objectives which could make it hard to implement. Likewise, we do not want two components share some common functionalities, which could confuse many application developers. Orthogonality makes it easier to understand what happens when things combine.
 
@@ -121,7 +123,7 @@ Another important principle is to keep the concepts **orthogonal**. We do not wa
 
 BOX Payout is NOT a blockchain that supports a general purpose Turing-complete virtual machine. Instead, its main purpose is to support fast and secure conditional transactions which is of great importance in a blockchain-based digital contents world. 
 
-A simple example of conditional transactions in the digital content area is like this: _if movie X is about to be streamed on platform P to user A, tokens should be paid from A to movie X's IP owner S if S can proof he does own the copyright of X, and to platform P to get the access key for X._ To enforce such a multi-party payout, we can choose to write a smart contract to govern the transfer of tokens among each party and then let the Ethereum Virtual Machine to execute the contract and validate the result.  
+A simple example of conditional transactions in the digital content area is like this: _if movie X is about to be streamed on platform P to user A, tokens should be paid from A to movie X's IP owner S if S can proof he does own the copyright of X, and to platform P to get the access key for X._ To enforce such a multi-party payout, one can choose to write a smart contract to govern the transfer of tokens among each party and then let the Ethereum Virtual Machine to execute the contract and validate the result.  
 
 \begin{figure}[h]
   \begin{center}
@@ -130,7 +132,7 @@ A simple example of conditional transactions in the digital content area is like
   \end{center}
 \end{figure}
 
-Unfortunately, this approach has a severe scalability problem. With the diversity of the contents comes the diversity of smart contracts, thus bringing heavy burden to the blockchain, because **every contract will be executed for every message on every node**. Therefore, BOX Payout will take another approach which we will elaborate below:
+Unfortunately, this approach has a severe scalability problem. With the diversity of the contents comes the diversity of smart contracts, thus bringing heavy burden to the blockchain, because **every contract will be executed for every message on every node**. Therefore, BOX Payout will take another approach which will be elaborated below:
 
 ### Off-chain Smart Contract
 
@@ -163,9 +165,9 @@ Consider a simple case: Alice wants to see a movie owned by Bob by paying Bob 1 
 
 ## BOX Passport
 
-With the growth of the ContentBox ecosystem, a plethora of content applications are expected to be built atop it. A single user shall have a consistent identity across all of them, instead of having to create an independent identity for each application. Therefore, we are planning to build a powerful **decentralized interoperable identity service** called "BOX Passport". It allows a user to transact frictionlessly **across multiple apps or websites** with a single digital identity and will enhance the user's privacy, security and control as well. 
+With the growth of the ContentBox ecosystem, a plethora of content applications are expected to be built atop it. A single user shall have a consistent identity across all of them, instead of having to create an independent identity for each application. Therefore, ContentBox will introduce a powerful **decentralized interoperable identity service** called "BOX Passport". It allows a user to transact frictionlessly **across multiple apps or websites** with a single digital identity and will enhance the user's privacy, security and control as well. 
 
-We establish the identity by extending the wallet concept to store personal information such as reputation besides token account. This identify service is not stored in any application’s centralized databases and inherently decentralized, less vulnerable to hacks. Users have full control on their identity and decide who can access which part of it for how long. Furthermore, BOX Passport will bind a creator to his artworks transparently and permanently, which helps him to build an ongoing reputation in the digital content world.
+BOX Passport establishes the identity by extending the wallet concept to store personal information such as reputation besides token account. This identify service is not stored in any application’s centralized databases and inherently decentralized, less vulnerable to hacks. Users have full control on their identity and decide who can access which part of it for how long. Furthermore, BOX Passport will bind a creator to his artworks transparently and permanently, which helps him to build an ongoing reputation in the digital content world.
 
 Based on BOX Passport, we will introduce a new feature for the ecosystem, named BOX Login, and will open it to every developer in the community. Similar to Facebook Login in concept, Box Login is a secure and convenient way for people to sign into any website, desktop app or mobile application in ContentBox ecosystem. However, BOX Login is implemented on the blockchain and will not be controlled by any single company or organization, which set it apart from today's any third-party authentication system on the world. 
 
@@ -236,7 +238,7 @@ As a popular mobile app, CastBox is a natural host for a mobile wallet of BOX to
 
 ## BOX Login 
 
-We will migrate the user accounts of CastBox onto the blockchain and give every user a secure universal BOX ID once the BOX Passport system is ready for production. After the migration, CastBox's backend server will no longer store the users' account and credential information. Instead, the app client will hit the blockchain to retrieve and verify a user's identity during the sign-in process. 
+CastBox will migrate the its accounts onto the blockchain and give every user a secure universal BOX ID once the BOX Passport system is ready for production. After the migration, CastBox's backend server will no longer store the users' account and credential information. Instead, the app client will hit the blockchain to retrieve and verify a user's identity during the sign-in process. 
 
 Using BOX Passport will bring benefits to CastBox's operator and its end-users as well. Since the user authentication and authorization has bee moved from the app's servers to a public blockchain, the operator shakes off the burden of guarding hacker attacks on user information. On the other hand, the app users also gain back the control of their own data, mitigating the risk of personal data breaches. 
 
@@ -274,7 +276,7 @@ AdSense is a program run by Google that allows publishers in the Google Network 
 Compared with Google AdSense, this decentralized program can provide a more transparent and reliable service. Without a central authority, all parties enjoy more flexibility; advertisers pay less in fees, and publishers receive higher payouts.
 
 ## Cross-service On-demand Video Player 
-Usually a media player is just a desktop or mobile software that can decoder many multimedia file formats. However, a new type of player can be developed with ContentBox. Besides the function to play a video clip on user's device, the new player can allow its users to search on a wide range of digital movies registered on ContentBox platform, although they are possibly hosted on different server farms owned by various partners of ContentBox. While streaming, the player can also collect BOX tokens in real-time and distribute them among the IP owners, streaming platform and storage providers according to a pre-defined smart contract automatically. 
+Usually a media player is just a desktop or mobile software that can decoder many multimedia file formats. However, a new type of player can be developed on ContentBox. Besides the function to play a video clip on user's device, the new player can allow its users to search on a wide range of digital movies registered on ContentBox platform, although they are possibly hosted on different server farms owned by various partners of ContentBox. While streaming, the player can also collect BOX tokens in real-time and distribute them among the IP owners, streaming platform and storage providers according to a pre-defined smart contract automatically. 
 
 The core ability of this new player is to interact with our BOX Payout and BOX Passport. Aided by these core components of ContentBox, the player can tap into the vast shared pool of genuine contents and enhance the user experience in video-on-demand greatly. Without the infrastructures provided by ContentBox, this new kind of software is unthinkable. 
 
@@ -294,7 +296,7 @@ The CastBox and ContentBox technical roadmaps include the following milestones:
 
 # Token Distribution
 
-Before the official launch of the native blockchain on the ContentBox Platform, BOX will be launched using Ethereum ERC 20 token standard. Once the main net of BOX Chain is online and stable, the ERC20 token will be converted to the chain token on a 1-1 basis. 
+Before the official launch of the native blockchain on the ContentBox Platform, BOX will be launched using Ethereum ERC 20 token standard. Once the main net of BOX Payout is online and stable, the ERC20 token will be converted to the chain token on a 1-1 basis. 
 
 ## Allocations
 
