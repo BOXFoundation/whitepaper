@@ -149,17 +149,17 @@ A set of parties can decide on some sort of contract or protocol that they want 
 
 ### Schnorr Signature
 
-A crucial piece of this approach is Schnorr Signature[^fn1]. Unlike ECDSA, Schnorr signature has **linearity** in its math, which makes it ideal for creating "adaptor signature" that can be used in settling off-chain transactions automatically. Actually, based on the exciting progress made recently in this research area spearheaded by Andrew Poelstra, a mathematician from Blockstream, we are exploring this technology to build a light-weight but powerful blockchain that suits for the digital content industry. 
+A crucial piece of this approach is Schnorr Signature[^fn1]. Unlike ECDSA signatures, Schnorr signature has **linearity** in its math, which makes it ideal for creating "adaptor signature" that can be used in settling off-chain transactions automatically. By replacing the signatures embedded in each input with an aggregated single signature, a blockchain can save large amount of disk spaces and become very light-weight, yet more powerful than before. 
 
-Consider a simple case: Alice wants to see a movie owned by Bob by paying Bob 1 BOX token. Now suppose Bob embeds the access key to the movie in a secret t and he chooses t s.t. T = t * G, and Bob is going to provide an adaptor signature for his half of the 2-of-2.
+Consider a simple case: Alice wants to stream an online movie owned by Bob, and he would like to pay Bob 1 BOX in exchange for a one-time access key to the movie. Now suppose Bob embeds the access key in a secret _t_, and the process that Alices gets _t_ can be described as follows:
 
-#. Alice, Bob share P_A, P_B, R_A, R_B as above; Bob gives T to Alice
-#. Alice and Bob therefore agree on e = H(J(A, B) || R_A + R_B + T || m) (note difference, T)
-#. Bob provides adaptor s' = r_B + e * x_B' (as in previous section, not a valid signature, but verifiable)
-#. Alice verifies: s' * G ?= R_B + e * P_B'
-#. If OK, Alice sends to Bob her sig: s_A = r_A + e * x_A'
-#. Bob completes, atomically releasing t: first, construct s_B = r_B + t + e * x_B', then combine: s_agg = s_A + s_B and broadcast, then Alice sees s_agg
-#. Alice subtracts: s_agg - s_A - s' = (r_B + t + e * x_B') - (r_B + e * x_B') = t
+#. Alice, Bob share $P_A$, $P_B$ (public keys), $R_A$, $R_B$ (random nonce points); Bob calculates $T = t * G$, and gives T to Alice
+#. Alice and Bob therefore agree on $e = H(J(A, B) || R_A + R_B + T || m)$ 
+#. Bob provides adaptor signature $s' = r_B + e * x_B'$ 
+#. Alice verifies: $s' * G = R_B + e * P_B'$
+#. If OK, Alice sends to Bob her signature: $s_A = r_A + e * x_A'$
+#. Bob completes, atomically releasing $t$: first, construct $s_B = r_B + t + e * x_B'$, then combine: $s_a = s_A + s_B$, sign the transaction and broadcast it on blockchain, then Alice sees $s_a$
+#. Alice subtracts: $s_a - s_A - s' = (r_B + t + e * x_B') - (r_B + e * x_B') = t$
 
 ![Alice Pays Bob to Access A Secret with An Adaptor Signature](images/schnorr.jpg)
 
@@ -290,9 +290,9 @@ The CastBox and ContentBox technical roadmaps include the following milestones:
 - 2017.10 Deep in-audio search feature launched
 - 2018.03 Token sale
 - 2018.09 Token integrated into CastBox app
-- 2018.12 Launch of BOX Passport 
-- 2019.03 Testnet of BOX Chain online 
-- 2019 Q4 Launch of BOX Chain Mainnet
+- 2018.12 Launch of BOX Passport (alpha versioin)
+- 2019.03 Testnet of BOX Payout online 
+- 2019 Q4 Launch of BOX Payout Mainnet
 
 # Token Distribution
 
