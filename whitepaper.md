@@ -126,10 +126,9 @@ BOX Payout is NOT a blockchain that supports a general purpose Turing-complete v
 A simple example of conditional transactions in the digital content area is like this: _if movie X is about to be streamed on platform P to user A, tokens should be paid from A to movie X's IP owner S if S can proof he does own the copyright of X, and to platform P to get the access key for X._ To enforce such a multi-party payout, one can choose to write a smart contract to govern the transfer of tokens among each party and then let the Ethereum Virtual Machine to execute the contract and validate the result.  
 
 \begin{figure}[h]
-  \begin{center}
-    \includegraphics[width=0.8\textwidth]{images/evm}
-    \caption{Typical On-chain Smart Contract}
-  \end{center}
+  \centering
+  \includegraphics[width=0.5\textwidth]{images/evm.jpg}
+  \caption{Typical On-chain Smart Contract. Applications Interact with Blockchain through EVM}
 \end{figure}
 
 Unfortunately, this approach has a severe scalability problem. With the diversity of the contents comes the diversity of smart contracts, thus bringing heavy burden to the blockchain, because **every contract will be executed for every message on every node**. Therefore, BOX Payout will take another approach which will be elaborated below:
@@ -142,8 +141,8 @@ A set of parties can decide on some sort of contract or protocol that they want 
 
 \begin{figure}[h]
   \begin{center}
-    \includegraphics[width=0.8\textwidth]{images/offchain}
-    \caption{Off-chain Smart Contract}
+    \includegraphics[width=0.5\textwidth]{images/offchain}
+    \caption{Off-chain Smart Contract. Applications Interact with Blockchain Directly}
   \end{center}
 \end{figure}
 
