@@ -60,11 +60,10 @@ CastBox is one of the most popular mobile audio platforms across the globe, rank
 
 Founded in early 2016 by an ex-Googler, the application currently has over 50 million audio content available, with over 12 million installed users. It is also the winner of Google Global Android Excellence Program 2017, the Most Entertaining of Best Apps by Google Play in 2016 and a number of other awards. CastBox is listed as Editors’ choice in 135 of Google Play’s countries.
 
-\begin{figure}[h]
-  \begin{center}
-    \includegraphics[width=0.5\textwidth]{images/rank}
-    \caption{Rank in News \& Magazines, Google Play, USA (Source: App Annie)}
-  \end{center}
+\begin{figure}{h}
+  \centering
+  \includegraphics[width=0.6\textwidth]{images/rank}
+  \caption{Rank in News \& Magazines, Google Play, USA (Source: App Annie)}
 \end{figure}
 
 ## The Foundation
@@ -125,13 +124,13 @@ Another important principle is to keep the concepts **orthogonal**. We do not wa
 
 BOX Payout is NOT a blockchain that supports a general purpose Turing-complete virtual machine. The main purpose of BOX Payout blockchain is to support fast and secure conditional transactions which is of great importance in a blockchain-based digital contents world. Undoubtedly, a Turing-complete virtual machine like EVM can carry out conditional transactions and ensure its execution and results, but it is not the only way!
 
-A simple example of conditional transactions in the digital content area is like this: _if movie X is about to be streamed on platform P to user A, tokens should be paid from A to movie X's IP owner S if S can proof he does own the copyright of X, and to platform P to get the access key for X._ To enforce such a multi-party payout, one can choose to write a smart contract to govern the transfer of tokens among each party and then let the Ethereum Virtual Machine to execute the contract and validate the result.  
-
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.5\textwidth]{images/evm.jpg}
   \caption{Typical On-chain Smart Contract. Applications Interact with Blockchain through EVM}
 \end{figure}
+
+A simple example of conditional transactions in the digital content area is like this: _if movie X is about to be streamed on platform P to user A, tokens should be paid from A to movie X's IP owner S if S can proof he does own the copyright of X, and to platform P to get the access key for X._ To enforce such a multi-party payout, one can choose to write a smart contract to govern the transfer of tokens among each party and then let the Ethereum Virtual Machine to execute the contract and validate the result.  
 
 Obviously, this is a very resource intensive approach. With the diversity of the contents comes the diversity of smart contracts, thus bringing heavy burden to the blockchain, because **every contract will be executed for every message on every node**. But luckily, the advancement made in cryptographic area and works spearheaded by Andrew Poelstra, a scientist at Blockstream, point us another way to achieve the same goal without using a virtual machine, which we called _Crypto Contracts_:
 
@@ -162,8 +161,8 @@ Consider a simple case: Alice wants to stream an online movie owned by Bob, and 
 \end{figure}
 
 #. Alice, Bob share $P_A$, $P_B$ (public keys), $R_A$, $R_B$ (random nonce points); Bob calculates $T = t * G$, and gives T to Alice
-#. Alice and Bob therefore agree on random challenge $e = H(J(A, B) || R_A + R_B + T || m)$ ($H$ denotes hash algorithm, and these two steps not shown on the figure above)
-#. Bob provides adaptor signature $s' = r_B + e * x_B'$ (shown in the upper-right corner of the figure)
+#. Alice and Bob therefore agree on random challenge $e = H(J(A, B) || R_A + R_B + T || m)$ ($H$ denotes hash algorithm, and these two steps not shown on the figure below)
+#. Bob provides adaptor signature $s' = r_B + e * x_B'$ (shown on the upper-right corner of the figure)
 #. Alice verifies: $s' * G = R_B + e * P_B'$
 #. If OK, Alice sends to Bob her signature: $s_A = r_A + e * x_A'$
 #. Bob completes, atomically releasing $t$: first, construct $s_B = r_B + t + e * x_B'$, then combine: $s_a = s_A + s_B$, sign the transaction and broadcast it on blockchain, then Alice sees $s_a$
@@ -262,7 +261,6 @@ A light wallet will be integrated into CastBox application. With the built-in wa
   \includegraphics[width=0.36\textwidth]{images/wallet}
   \caption{In-app light wallet}
 \end{wrapfigure}
-
 As a popular mobile app, CastBox is a natural host for a mobile wallet of BOX tokens. It will help onboard millions of users for ContentBox, solving one of the biggest problems when building an online ecosystem: cold start. Moreover, as CastBox is a frequently used app, the users will interact with the application multiple times a day and will get familiar with crypto token related concepts gradually. In the long run, when they are comfortable with BOX token and feel the benefits from the new blockchain-based system, they will push other applications they use to join ContentBox and grow the ecosystem together. 
 
 ## BOX Login 
@@ -273,13 +271,12 @@ Using BOX Passport will bring benefits to CastBox's operator and its end-users a
 
 ## In-app Token-based Reward System
 
-Along with the light wallet, a token-based reward system will be built into CastBox as well. The reward system serves two goals mainly: incentivize the authors to create more valuable contents and motivate the users to curate and spread good contents. For example, if a listener finds an interesting podcast in CastBox, submits a comment, and then shares it with his friends on social networks (such as Facebook or Twitter), he will get BOX tokens as rewards. 
-
 \begin{wrapfigure}{r}{0.48\textwidth}
   \centering
   \includegraphics[width=0.36\textwidth]{images/reward}
   \caption{Earn BOX by flagging spams}
 \end{wrapfigure}
+Along with the light wallet, a token-based reward system will be built into CastBox as well. The reward system serves two goals mainly: incentivize the authors to create more valuable contents and motivate the users to curate and spread good contents. For example, if a listener finds an interesting podcast in CastBox, submits a comment, and then shares it with his friends on social networks (such as Facebook or Twitter), he will get BOX tokens as rewards. 
 
 Users can also gain tokens for helping filter spams. Spamming is a challenge for every online community and user experience will be hurt badly if it cannot be effectively controlled. Normally a digital content platform will solve this problem by hiring more moderators or put more money on the research of AI-based algorithms aiming to filter spams automatically. However, both of these approaches are costly and inefficient in practice. Through the built-in reward system, CastBox users can be rewarded for flagging low quality content. 
 
