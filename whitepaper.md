@@ -176,7 +176,7 @@ To further improve the scalability of BOX Payout blockchain and make it mobile-f
 PoS is a category of consensus mechanism for public blockchains which depends on a validator's proportion of the token number of tokens in the network. In Proof of Work ("PoW") based public blockchains, the algorithm rewards participants who solve cryptographic puzzles in order to validate transactions and create new blocks. In PoS-based public blockchains, a set of validators take turns proposing and voting on the next block, and the weight of each validator's vote depends on the size of its stake.
 
 Because of the specific domain the ContentBox Platform is serving, PoNE has also been added on top of a plain PoS. The probability of being selected as a validator will depend, on top of the amount of validator’s deposit, the content creation and consumption of that particular node. Together with PoS, the score of the being selected as a validator will be as follow:
-$$\mu_i=\frac{s_i}{\sum{s}}+\frac{c_i*\omega_i}{\sum{c*\omega}}$$
+$$\mu_i=\frac{s_i}{\sum{s}}+\frac{c_i*\omega_i}{\sum{(c*\omega)}}$$
 
 $\mu_i$ denotes the score of a node
 
