@@ -38,19 +38,19 @@ Advertisers also feel opaque in what they are paying for. They bid for users’ 
 
 Our solution to the problems mentioned above is a blockchain-based ecosystem: ContentBox, which provides the whole industry with three unprecedented characteristics: **a shared content pool, a shared user pool, and a unified payout system**. 
 
-Unlike traditional open platforms such as App Store or WeChat Open Platform[^fn6], ContentBox is fully __decentralized, autonomous, and driven by the open source community instead of an industry giant__. By leveraging the blockchain as an open, immutable, distributed, trustless, and temper-proof ledger, web and mobile content platforms can share content (including advertisement) consumption statistics without ceding control to a third party.
+Unlike traditional open platforms such as App Store or WeChat Open Platform[^fn6], ContentBox is fully __decentralized, autonomous, and driven by the open source community instead of an industry giant__. Under ContentBox, various web and mobile applications can share a digital content and user base much richer than before, and process payments swiftly without ceding control to a third party.
 
-In principle, ContentBox is designed to benefit all stakeholders in the industry including, but are not limited to, creators, consumers, advertisers, distributors, and application developers. It allows them to collaborate, innovate, build, and engage new generation of digital content applications that play on fair terms. 
+In principle, ContentBox is designed to benefit all stakeholders in the industry including but not limited to, creators, consumers, advertisers, distributors, and application developers. It allows them to collaborate, innovate, build, and engage new generation of digital content applications that play on fair terms. 
 
-For content creators, ContentBox tokens allow them to be rewarded every time their content is consumed, motivating them to create more diverse and higher quality content. Top creators of the most popular content still reap big rewards while the rest can also receive compensation in proportion to their content popularity, who receive none previously. In addition, ContentBox smart contracts connect creators directly with their consumers by streamlining and automating business transactions without intermediaries, who chip away creators' share. While a piece of content is being accessed, smart contracts ensure a much larger portion of the income, if not all, is automatically retained for its rightful creators directly in tokens, according to agreed terms coded in.
+For content creators, ContentBox's payout system will allow them to get rewards every time their content is consumed, motivating them to create more diverse and higher quality content. Top creators of the most popular content still reap big rewards while the rest can also receive compensation in proportion to their content popularity, who receive none previously. In addition, ContentBox will connect creators directly with their consumers by streamlining and automating business transactions without intermediaries, who chip away creators' share. 
 
-For consumers, they are also rewarded fairly according to their contributions in the form of tokens, thus are incentivized to be more active in growing a content platform organically. Whatever activity they participate in, they will receive token rewards as long as it is beneficial for the content platform as a whole. It can be sharing content to a larger audience, voting or commenting on content, or sometimes simply consuming content. If a user has a stake in the success of the platform, he will put more effort and research into curating and advocating for it, as evidenced in the rise of Bitcoin.
+For consumers, they are also rewarded fairly according to their contributions in the form of tokens, thus are incentivized to be more active in growing a content platform organically. Users will receive token rewards as long as their activities  are beneficial for the content platform as a whole. It can be sharing content to a larger audience, voting or commenting on content, or sometimes simply consuming content. If a user has a stake in the success of the platform, he will put more effort and research into curating and advocating for it, as evidenced in the rise of Bitcoin.
 
 Even advertisers will benefit from the new ecosystem. With ContentBox, advertisers can tap into a shared advertisement statistics ledger and pay by actual advertisement viewership automated by smart contracts, instead of relying on opaque statistics reported by distributors. Since the ledger is open, they can audit and verify it and have peace of mind. This can help them to build a unified and coherent marketing strategy, instead of running paralleled campaigns on different platforms. Furthermore, they can lower spending by leveraging a token-based bounty program.
 
-For distributors, they can together build a shared content statistics ledger which benefits everyone by lowering the traffic acquisition cost and IP purchase cost. ContentBox can even bring benefits to the investors by allowing them to participate in many micro crowd-fundings started by various content creators instead of betting large amount of money on a handful of projects.
+For distribution platforms and social networks, they can together build a shared content and user ledger which benefits everyone by lowering the traffic acquisition cost and IP purchase cost. They can focus on improving user's experience instead of competing with each other. 
 
-For application developers, they can easily integrate blockchain-enabled token and smart contract into their existing or to be built applications. ContentBox will provide developers with easy-to-use, well documented, and modular SDK and libraries for leveraging blockchain technology in their applications seamlessly.
+For application developers, they can easily integrate the blockchain-enabled token, decentralized payment infrastructure and identity services provided by ContentBox into their existing or to be built applications. As a result, a variety of new applications will be built and deployed easily and enrich the whole ContentBox ecosystem. 
 
 By opening the black box digital content industry is today, the whole industry, including all stakeholders, can flourish with cooperation and transparency by collaboratively building a new content economy. Furthermore, to foster the collaboration of all stakeholders, ContentBox will introduce a new token, named __BOX__, which will play a key role in the ecosystem's economy. 
 
@@ -62,6 +62,7 @@ Founded in early 2016 by an ex-Googler, the application currently has over 50 mi
 
 \begin{figure}{h}
   \centering
+  \captionsetup{justification=centering}
   \includegraphics[width=0.6\textwidth]{images/rank}
   \caption{Rank in News \& Magazines, Google Play, USA (Source: App Annie)}
 \end{figure}
@@ -80,7 +81,7 @@ The current mainstream blockchain networks, such as Bitcoin and Ethereum, are no
 
 + **Long transaction delays & low throughput.** The digital content industry is quite different from finance or e-commerce world in terms of action frequency. Typically we might transfer our money or buy/sell goods several times a day, but on a digital content platform, a teenager might do way more actions, like streaming a song or watching a movie clip or tipping an article writer. In other words, we are expecting way larger transaction volume in the online digital content world. This trait of the digital content industry determines that current Bitcoin or Ethereum platform cannot meet the needs from real world, which leaves us no choice but to find novel solutions and build a new blockchain platform. 
 
-+ **No privacy in smart contracts.** In Ethereum all smart contracts are stored publicly on the nodes of the blockchain, which introduces severe privacy problems. Due to the visibility of the contracts, a normal streamer's taste or preferences may be detected and published to a lot of people he may not know. Likewise, a content producer might also worry that his or her profit sharing plan be searched by outsiders and leaked to the public. Furthermore, the increasing complexity of smart contracts can bring security risks as demonstrated by DAO.
++ **No privacy in smart contracts.** In Ethereum all smart contracts are stored publicly on the nodes of the blockchain, which introduces severe privacy problems. Due to the visibility of the contracts, a normal streamer's taste or preferences may be detected and published to a lot of people he may not know. Likewise, a content producer might also worry that his or her profit sharing plan be searched by outsiders and leaked to the public. Furthermore, the increasing complexity of smart contracts can bring security risks as demonstrated by DAO and Parity.
 
 + **High transaction fees.** High transaction cost means there is no real micro-payment; and without micro-payments, fans cannot support content creators with small donations, neither can they pay for watching just an episode of a series show nor access to limited content like a VIP club. The digital content industry needs a frictionless micro-payment system to foster an active and positive community. 
 
@@ -92,6 +93,7 @@ In conclusion, current mainstream chains do not suit the needs of ContentBox. Ad
 
 \begin{figure}[h]
   \begin{center}
+    \captionsetup{justification=centering}
     \includegraphics[width=0.8\textwidth]{images/overview}
     \caption{Overview of ContentBOX Architecture}
   \end{center}
@@ -126,6 +128,7 @@ BOX Payout is NOT a blockchain that supports a general purpose Turing-complete v
 
 \begin{figure}[h]
   \centering
+  \captionsetup{justification=centering}
   \includegraphics[width=0.5\textwidth]{images/evm.jpg}
   \caption{Typical On-chain Smart Contract. Applications Interact with Blockchain through EVM}
 \end{figure}
@@ -144,6 +147,7 @@ Basically, a set of parties can decide on some sort of contract or protocol that
 
 \begin{figure}[h]
   \begin{center}
+    \captionsetup{justification=centering}
     \includegraphics[width=0.5\textwidth]{images/offchain}
     \caption{Off-chain Smart Contract. Applications Interact with Blockchain Directly}
   \end{center}
@@ -155,6 +159,7 @@ Consider a simple case: Alice wants to stream an online movie owned by Bob, and 
 
 \begin{figure}[h]
   \begin{center}
+    \captionsetup{justification=centering}
     \includegraphics[width=0.4\textwidth]{images/schnorr}
     \caption{Alice Pays Bob to Gain An Access Key for A Movie with An Adaptor Signature}
   \end{center}
@@ -258,8 +263,10 @@ A light wallet will be integrated into CastBox application. With the built-in wa
 
 \begin{wrapfigure}{r}{0.48\textwidth}
   \centering
+  \captionsetup{justification=centering}
   \includegraphics[width=0.36\textwidth]{images/wallet}
   \caption{In-app light wallet}
+  \vspace{-5pt}
 \end{wrapfigure}
 As a popular mobile app, CastBox is a natural host for a mobile wallet of BOX tokens. It will help onboard millions of users for ContentBox, solving one of the biggest problems when building an online ecosystem: cold start. Moreover, as CastBox is a frequently used app, the users will interact with the application multiple times a day and will get familiar with crypto token related concepts gradually. In the long run, when they are comfortable with BOX token and feel the benefits from the new blockchain-based system, they will push other applications they use to join ContentBox and grow the ecosystem together. 
 
@@ -273,6 +280,7 @@ Using BOX Passport will bring benefits to CastBox's operator and its end-users a
 
 \begin{wrapfigure}{r}{0.48\textwidth}
   \centering
+  \captionsetup{justification=centering}
   \includegraphics[width=0.36\textwidth]{images/reward}
   \caption{Earn BOX by flagging spams}
 \end{wrapfigure}
