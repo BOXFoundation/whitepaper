@@ -121,7 +121,9 @@ Another important principle is to keep the concepts **orthogonal**. We do not wa
 
 ## BOX Payout
 
-BOX Payout is NOT a blockchain that supports a general purpose Turing-complete virtual machine. Instead, its main purpose is to support fast and secure conditional transactions which is of great importance in a blockchain-based digital contents world. 
+### A Chain Without Virtual Machine
+
+BOX Payout is NOT a blockchain that supports a general purpose Turing-complete virtual machine. The main purpose of BOX Payout blockchain is to support fast and secure conditional transactions which is of great importance in a blockchain-based digital contents world. Undoubtedly, a Turing-complete virtual machine like EVM can carry out conditional transactions and ensure its execution and results, but it is not the only way!
 
 A simple example of conditional transactions in the digital content area is like this: _if movie X is about to be streamed on platform P to user A, tokens should be paid from A to movie X's IP owner S if S can proof he does own the copyright of X, and to platform P to get the access key for X._ To enforce such a multi-party payout, one can choose to write a smart contract to govern the transfer of tokens among each party and then let the Ethereum Virtual Machine to execute the contract and validate the result.  
 
@@ -131,13 +133,15 @@ A simple example of conditional transactions in the digital content area is like
   \caption{Typical On-chain Smart Contract. Applications Interact with Blockchain through EVM}
 \end{figure}
 
-Unfortunately, this approach has a severe scalability problem. With the diversity of the contents comes the diversity of smart contracts, thus bringing heavy burden to the blockchain, because **every contract will be executed for every message on every node**. Therefore, BOX Payout will take another approach which will be elaborated below:
+Obviously, this is a very resource intensive approach. With the diversity of the contents comes the diversity of smart contracts, thus bringing heavy burden to the blockchain, because **every contract will be executed for every message on every node**. But luckily, the advancement made in cryptographic area and works spearheaded by Andrew Poelstra, a scientist at Blockstream, point us another way to achieve the same goal without using a virtual machine, which we called _Crypto Contracts_:
 
-### Off-chain Smart Contract
+### Crypto Contracts
+
+In essential, Crypto Contracts is a kind of smart contracts that can be translated into a series of crypto primitives. Developers can also think of it as off-chain smart contracts.
 
 Since the birth of Ethereum, smart contracts have been an indispensable part for many blockchain projects. However, most contracts need only one thing from the blockchain: an immutable ordering of commitments to prevent double-spending. Therefore, instead of using complex and resource intensive smart contracts to align the interests of stakeholders and automate payment related transactions, we can aggregate simple signatures to achieve the same goal but with much higher performance. 
 
-A set of parties can decide on some sort of contract or protocol that they want to execute, and as a result of faithful execution they will produce a valid signature and the blockchain and its verifiers can validate that the signature is valid. The blockchain does not need to know any of the details of the original transaction. By using signature itself as a witness, we can move the bulk of transactions off-chain and leave the blockchain to do what it is really good at: check a multi-signature. In other words, we can compile a smart contract into a series of cryptographic primitives; when someone signs and validate an ordinary transaction with these primitives, it holds that a smart contract that is not hosted on the blockchain still executes faithfully.
+Basically, a set of parties can decide on some sort of contract or protocol that they want to execute, and as a result of faithful execution they will produce a valid signature and the blockchain and its verifiers can validate that the signature is valid. The blockchain does not need to know any of the details of the original transaction. By using signature itself as a witness, we can move the bulk of transactions off-chain and __leave the blockchain to do what it is really good at: check a multi-signature__. In other words, we can compile a smart contract into a series of cryptographic primitives; when someone signs and validate an ordinary transaction with these primitives, it holds that a smart contract that is not hosted on the blockchain still executes faithfully.
 
 \begin{figure}[h]
   \begin{center}
@@ -146,21 +150,47 @@ A set of parties can decide on some sort of contract or protocol that they want 
   \end{center}
 \end{figure}
 
-### Schnorr Signature
-
 A crucial piece of this approach is Schnorr Signature[^fn1]. Unlike ECDSA signatures, Schnorr signature has **linearity** in its math, which makes it ideal for creating "adaptor signature" that can be used in settling off-chain transactions automatically. By replacing the signatures embedded in each input with an aggregated single signature, a blockchain can save large amount of disk spaces and become very light-weight, yet more powerful than before. 
 
 Consider a simple case: Alice wants to stream an online movie owned by Bob, and he would like to pay Bob 1 BOX in exchange for a one-time access key to the movie. Now suppose Bob embeds the access key in a secret _t_, and the process that Alices gets _t_ can be described as follows:
 
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[width=0.4\textwidth]{images/schnorr}
+    \caption{Alice Pays Bob to Gain An Access Key for A Movie with An Adaptor Signature}
+  \end{center}
+\end{figure}
+
 #. Alice, Bob share $P_A$, $P_B$ (public keys), $R_A$, $R_B$ (random nonce points); Bob calculates $T = t * G$, and gives T to Alice
-#. Alice and Bob therefore agree on $e = H(J(A, B) || R_A + R_B + T || m)$ 
-#. Bob provides adaptor signature $s' = r_B + e * x_B'$ 
+#. Alice and Bob therefore agree on random challenge $e = H(J(A, B) || R_A + R_B + T || m)$ ($H$ denotes hash algorithm, and these two steps not shown on the figure above)
+#. Bob provides adaptor signature $s' = r_B + e * x_B'$ (shown in the upper-right corner of the figure)
 #. Alice verifies: $s' * G = R_B + e * P_B'$
 #. If OK, Alice sends to Bob her signature: $s_A = r_A + e * x_A'$
 #. Bob completes, atomically releasing $t$: first, construct $s_B = r_B + t + e * x_B'$, then combine: $s_a = s_A + s_B$, sign the transaction and broadcast it on blockchain, then Alice sees $s_a$
 #. Alice subtracts: $s_a - s_A - s' = (r_B + t + e * x_B') - (r_B + e * x_B') = t$
 
-![Alice Pays Bob to Access A Secret with An Adaptor Signature](images/schnorr.jpg)
+### Consensus Mechanism
+
+To further improve the scalability of BOX Payout blockchain and make it mobile-friendly, a derivation of Proof of Stake ("PoS"), named Proof of Network Effect ("PoNE") will be adopted as the major consensus mechanism.
+
+PoS is a category of consensus mechanism for public blockchains which depends on a validator's proportion of the token number of tokens in the network. In Proof of Work ("PoW") based public blockchains, the algorithm rewards participants who solve cryptographic puzzles in order to validate transactions and create new blocks. In PoS-based public blockchains, a set of validators take turns proposing and voting on the next block, and the weight of each validator's vote depends on the size of its stake.
+
+Because of the specific domain the ContentBox Platform is serving, PoNE has also been added on top of a plain PoS. The probability of being selected as a validator will depend, on top of the amount of validator’s deposit, the content creation and consumption of that particular node. Together with PoS, the score of the being selected as a validator will be as follow:
+$$\mu_i=\frac{s_i}{\sum{s}}+\frac{c_i*\omega_i}{\sum{c*\omega}}$$
+
+$\mu_i$ denotes the score of a node
+
+$s_i$ is the stake of a node
+
+$c_i$ is the contribution score of a node, affected by the quantity and frequency of content contribution related this node
+
+$\omega_i$ is the weight value largely like the impact factor used in academic area
+
+In order to perform mining on the blockchain of BOX Payout, nodes will be bonded by the protocol and make a security deposit. Every round of the block creation, a list of 5 ordered validators will be selected randomly with the score stated in the formula above. If the first selected validator is offline and could not perform the validation, the second will substitute and take its place.
+
+Significant advantages of this consensus mechanism include security, reduced risk of centralization, and energy efficiency. Transaction throughput will also be improved and it will greatly affect the user experience when consuming the content. Say, when a piece of audio is played, the time should be recorded, and the relevant payment, either from advertising or subscription, should be instantaneously be distributed back to their right holders. This is the whole notion for building BOX Payout.
+
+Since the ContentBox Platform is targeting the digital content consumption market which usually happens on mobile nowadays, it is essentially targeting a large distributed validator population with minimal resource consumption. The potential nodes will be established on mobile devices, given the consumption pattern set forth above. The computation power may not be as strong, while the quantity of nodes could number in the hundreds of millions. This builds the foundation for using PoS without the concern of initial distribution of token.
 
 ## BOX Passport
 
@@ -200,7 +230,7 @@ Overall, we believe sharding still has a long way to go before becoming a widely
 ### Lighting Network and Raiden Network
 Basically, both Lightning[^fn9] and Raiden[^fn10] network rely on off-chain state channels. The core idea here is that participants put some bitcoin or ether into a multi-signature address (open a payment channel) and then sign transactions without submitting it to the blockchain. Payment channels can be organized into a network and thus a payment between two parties can be conducted through multiple hops. The payment channel can be closed by either party at any time, and the last-signed transaction with the most up-to-date balances for both parties is the one that will be committed to the blockchain.
 
-Both of these two approaches can increase transaction throughput and lower fees effectively in their respective environment (one for Bitcoin and one for Ethereum) if properly implemented. However, there are still some limitations in practice. For instance, all participants of a transaction need to lock up some tokens on the chain until the channel is closed, thus discouraging a central payee to use the payment network. Another challenge is the atomic multi-party (3 or more) payments. With the recent roll-out of 
+Both of these two approaches can increase transaction throughput and lower fees effectively in their respective environment (one for Bitcoin and one for Ethereum) if properly implemented. However, there are still some limitations in practice. For instance, all participants of a transaction need to lock up some tokens on the chain until the channel is closed, thus discouraging a central payee to use the payment network. 
 
 ### Plasma
 Plasma[^fn12] is one of the most promising proposals for scaling smart contract computation on the blockchain. With Plasma, the blockchains are composed into a tree hierarchy, and each branch is treated as a blockchain that has its own history and computations that are map-reducable. Therefore, the root chain only needs to handle a small amount of merkleized commitments from child chains, which results in high scalability.
@@ -225,13 +255,13 @@ For us, we think the basic design of Steem is quite impressive but we will not b
 
 ## Mobile Wallet
 
+A light wallet will be integrated into CastBox application. With the built-in wallet, a user can see his balances and transaction history instantly while using the app, including the token rewards for his contribution to the CastBox community. In the future, the wallet will show balances across apps. 
+
 \begin{wrapfigure}{r}{0.48\textwidth}
   \centering
   \includegraphics[width=0.36\textwidth]{images/wallet}
   \caption{In-app light wallet}
 \end{wrapfigure}
-
-A light wallet will be integrated into CastBox application. With the built-in wallet, a user can see his balances and transaction history instantly while using the app, including the token rewards for his contribution to the CastBox community. In the future, the wallet will show balances across apps. 
 
 As a popular mobile app, CastBox is a natural host for a mobile wallet of BOX tokens. It will help onboard millions of users for ContentBox, solving one of the biggest problems when building an online ecosystem: cold start. Moreover, as CastBox is a frequently used app, the users will interact with the application multiple times a day and will get familiar with crypto token related concepts gradually. In the long run, when they are comfortable with BOX token and feel the benefits from the new blockchain-based system, they will push other applications they use to join ContentBox and grow the ecosystem together. 
 
@@ -243,13 +273,13 @@ Using BOX Passport will bring benefits to CastBox's operator and its end-users a
 
 ## In-app Token-based Reward System
 
+Along with the light wallet, a token-based reward system will be built into CastBox as well. The reward system serves two goals mainly: incentivize the authors to create more valuable contents and motivate the users to curate and spread good contents. For example, if a listener finds an interesting podcast in CastBox, submits a comment, and then shares it with his friends on social networks (such as Facebook or Twitter), he will get BOX tokens as rewards. 
+
 \begin{wrapfigure}{r}{0.48\textwidth}
   \centering
   \includegraphics[width=0.36\textwidth]{images/reward}
   \caption{Earn BOX by flagging spams}
 \end{wrapfigure}
-
-Along with the light wallet, a token-based reward system will be built into CastBox as well. The reward system serves two goals mainly: incentivize the authors to create more valuable contents and motivate the users to curate and spread good contents. For example, if a listener finds an interesting podcast in CastBox, submits a comment, and then shares it with his friends on social networks (such as Facebook or Twitter), he will get BOX tokens as rewards. 
 
 Users can also gain tokens for helping filter spams. Spamming is a challenge for every online community and user experience will be hurt badly if it cannot be effectively controlled. Normally a digital content platform will solve this problem by hiring more moderators or put more money on the research of AI-based algorithms aiming to filter spams automatically. However, both of these approaches are costly and inefficient in practice. Through the built-in reward system, CastBox users can be rewarded for flagging low quality content. 
 
