@@ -50,9 +50,9 @@ Even advertisers will benefit from the new ecosystem. With ContentBox, advertise
 
 For distribution platforms and social networks, they can together build a shared content and user ledger which benefits everyone by lowering the traffic acquisition cost and IP purchase cost. They can focus on improving user's experience instead of competing with each other. 
 
-For application developers, they can easily integrate the blockchain-enabled token, decentralized payment infrastructure and identity services provided by ContentBox into their existing or to be built applications. As a result, a variety of new applications will be built and deployed easily and enrich the whole ContentBox ecosystem. 
+For application developers, they can leverage the blockchain-enabled token, the decentralized payment infrastructure and the identity services provided by ContentBox to build applications with better user experience and stronger monetization ability. 
 
-By opening the black box digital content industry is today, the whole industry, including all stakeholders, can flourish with cooperation and transparency by collaboratively building a new content economy. Furthermore, to foster the collaboration of all stakeholders, ContentBox will introduce a new token, named __BOX__, which will play a key role in the ecosystem's economy. 
+Overall, by opening the black box digital content industry is today, the whole industry, including all stakeholders, can flourish with cooperation and transparency by collaboratively building a new content economy. To foster the collaboration of all stakeholders, ContentBox will introduce a new token, named __BOX__, which will play a key role in the ecosystem's economy. 
 
 ## About CastBox
 
