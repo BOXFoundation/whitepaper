@@ -87,7 +87,7 @@ The current mainstream blockchain networks, such as Bitcoin and Ethereum, are no
 
 In conclusion, current mainstream chains do not suit the needs of ContentBox. Admittedly, many nascent projects are claiming they can solve the problems above, but none of them has proved to be mature in production; or they lack support for privacy, or just cannot onboard enough developers and users to form a positive, self-growing ecosystem. To address the aforementioned challenges and eventually build a sustainable ecosystem for the whole digital content industry, we here propose an architecture which consists of three main components:
 
-+ **BOX Payout**. A fast and secure blockchain to carry out multipart contingent payments.
++ **BOX Payout**. A fast and secure blockchain to carry out multiparty contingent payments.
 + **BOX Passport**. A blockchain-based identity and attribution service across multiple applications.
 + **BOX Unpack**. A turn-key solution for small and medium-sized partners to setup an audio or video platform easily and quickly. 
 
@@ -130,12 +130,12 @@ BOX Payout is NOT a blockchain that supports a general purpose Turing-complete v
   \centering
   \captionsetup{justification=centering}
   \includegraphics[width=0.5\textwidth]{images/evm.jpg}
-  \caption{Typical On-chain Smart Contract. Applications Interact with Blockchain through EVM}
+  \caption{Traditional On-chain Smart Contract. Applications Interact with Blockchain through EVM}
 \end{figure}
 
 A simple example of conditional transactions in the digital content area is like this: _if movie X is about to be streamed on platform P to user A, tokens should be paid from A to movie X's IP owner S if S can proof he does own the copyright of X, and to platform P to get the access key for X._ To enforce such a multi-party payout, one can choose to write a smart contract to govern the transfer of tokens among each party and then let the Ethereum Virtual Machine to execute the contract and validate the result.  
 
-Obviously, this is a very resource intensive approach. With the diversity of the contents comes the diversity of smart contracts, thus bringing heavy burden to the blockchain, because **every contract will be executed for every message on every node**. But luckily, the advancement made in cryptographic area and works spearheaded by Andrew Poelstra, a scientist at Blockstream, point us another way to achieve the same goal without using a virtual machine, which we called _Crypto Contracts_:
+Obviously, this is a very resource intensive approach. With the diversity of the contents comes the diversity of smart contracts, thus bringing heavy burden to the blockchain, because **every contract will be executed for every message on every node**. But luckily, the advancement made in cryptographic research and works spearheaded by Andrew Poelstra, a scientist at Blockstream, point us another way to achieve the same goal without using a virtual machine, which we called _Crypto Contracts_:
 
 ### Crypto Contracts
 
@@ -155,7 +155,7 @@ Basically, a set of parties can decide on some sort of contract or protocol that
 
 A crucial piece of this approach is Schnorr Signature[^fn1]. Unlike ECDSA signatures, Schnorr signature has **linearity** in its math, which makes it ideal for creating "adaptor signature" that can be used in settling off-chain transactions automatically. By replacing the signatures embedded in each input with an aggregated single signature, a blockchain can save large amount of disk spaces and become very light-weight, yet more powerful than before. 
 
-Consider a simple case: Alice wants to stream an online movie owned by Bob, and he would like to pay Bob 1 BOX in exchange for a one-time access key to the movie. Now suppose Bob embeds the access key in a secret _t_, and the process that Alices gets _t_ can be described as follows:
+Consider a simple case: Alice wants to stream an online movie owned by Bob, and he would like to pay Bob 1 BOX in exchange for a one-time access key to the movie. Now suppose Bob embeds the access key in a secret _t_, and the process that Alice gets _t_ can be described as follows:
 
 \begin{figure}[h]
   \begin{center}
@@ -324,7 +324,7 @@ The CastBox and ContentBox technical roadmaps include the following milestones:
 - 2017.10 Deep in-audio search feature launched
 - 2018.03 Token sale
 - 2018.09 Token integrated into CastBox app
-- 2018.12 Launch of BOX Passport (alpha versioin)
+- 2018.12 Launch of BOX Passport (alpha version)
 - 2019.03 Testnet of BOX Payout online 
 - 2019 Q4 Launch of BOX Payout Mainnet
 
@@ -337,7 +337,7 @@ Before the official launch of the native blockchain on the ContentBox Platform, 
 Percentage | Usage | Detail |
 |---|---|--------|
 25% | Pre-sale | Target selected institutional investors, with a 6-month locking period. |
-15% | Team | Rewards for in-house dev team and open-source contributors with a 4-year vesting period. |
+15% | Team | Rewards for in-house R&D team and open-source contributors with a 4-year vesting period. |
 30% | Ecosystem Incentives | Incentive all participants in the ecosystem, such as the creators, the audiences, the individual investors, the platform, etc. |
 20% | Foundation | Protect the BOX token from speculative trading and fund the operations of the foundation. |
 10% | Partnership | To fund the bounty program and build partnership with other audio/video websites or mobile apps. |
