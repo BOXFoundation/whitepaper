@@ -69,27 +69,29 @@ Founded in early 2016 by an ex-Googler, the application currently has over 50 mi
 
 ## The Foundation
 
-A non-profit organization, Contentbox foundation ("the Foundation"), has been set up to oversee the productive and positive growth of the new ContentBox ecosystem. The Foundation will administer the use of the proceeds and ensure the healthy circulation of the BOX token. As the ultimate goal of ContentBox is to build a fully decentralized and autonomous ecosystem for the digital content industry, the governance and operation of the Foundation will be kept as transparent as possible. In the long run, __the Foundation will be transformed to a totally software defined organization__. 
+A non-profit organization, Contentbox Foundation ("the Foundation"), has been set up to oversee the productive and positive growth of the new ContentBox ecosystem. The Foundation will administer the use of the proceeds and ensure the healthy circulation of the BOX token. As the ultimate goal of ContentBox is to build a fully decentralized and autonomous ecosystem for the digital content industry, the governance and operation of the Foundation will be kept as transparent as possible. In the long run, __the Foundation will be transformed to a totally software defined organization__. 
 
 As the founding member of the Foundation, CastBox will pioneer the transition from a centralized app to a decentralized blockchain-based app and introduce BOX to its tens of millions of users. In the near future, CastBox will also open source the vast majority of its currently proprietary codebase after it integrates BOX into the app successfully, encouraging the open source community to drive the evolution of ContentBox.
 
 # Technical Architecture
 
-## Why A New Platform?
+## Why A New Blockchain?
 
-The current mainstream blockchain networks, such as Bitcoin and Ethereum, are not a natural fit for the digital content industry due to the following reasons: 
+The digital conent industry bears a few unique traits warranting its own dedicated blockchain at this stage.
 
-+ **Long transaction delays & low throughput.** The digital content industry is quite different from finance or e-commerce world in terms of action frequency. Typically we might transfer our money or buy/sell goods several times a day, but on a digital content platform, a teenager might do way more actions, like streaming a song or watching a movie clip or tipping an article writer. In other words, we are expecting way larger transaction volume in the online digital content world. This trait of the digital content industry determines that current Bitcoin or Ethereum platform cannot meet the needs from real world, which leaves us no choice but to find novel solutions and build a new blockchain platform. 
++ **High frequency.** The digital content industry is quite different from payment or e-commerce world in terms of action frequency. Typically we transfer our money or buy/sell goods no more than several times a day. But on a digital content platform, it is not uncommon for a user to stream a song, watch a movie clip, and tip an article author within a few minutes. In other words, we expect much larger transaction volume in the digital content world serving millions of users. This requires the underlying blockchain to support high transaction throughput, potentially hundreds or even thousands of transactions per second.
 
-+ **No privacy in smart contracts.** In Ethereum all smart contracts are stored publicly on the nodes of the blockchain, which introduces severe privacy problems. Due to the visibility of the contracts, a normal streamer's taste or preferences may be detected and published to a lot of people he may not know. Likewise, a content producer might also worry that his or her profit sharing plan be searched by outsiders and leaked to the public. Furthermore, the increasing complexity of smart contracts can bring security risks as demonstrated by DAO and Parity.
++ **Few transaction patterns.** Most content business logic boils down to something like: _if content C is about to be consumed on platform P by user U, tokens should be paid from U to content C's owner O if U can prove he owns the copyright of C, and to platform P to get the access key for X._ This means we do not have to support arbitrary and general smart contracts and be Turing complete. It suffices to enable only a very limited set of smart contracts like Bitcoin scripting does, greatly simplifying our blockchain design and reducing its workload. All the security risks coming with Turing-completeness, as seen in Ethereum, can also be avoided.
 
-+ **High transaction fees.** High transaction cost means there is no real micro-payment; and without micro-payments, fans cannot support content creators with small donations, neither can they pay for watching just an episode of a series show nor access to limited content like a VIP club. The digital content industry needs a frictionless micro-payment system to foster an active and positive community. 
++ **No privacy in smart contracts.** The appeal of a public blockchain such as Ethereum partially lies in its transparency: all smart contracts are stored publicly on every node and are independently auditable. However, users often prefer to transact privately. For example, it is not desirable for a podcast creator's streaming income to be detectable to a lot of people he does not even know. Privacy is even more critical for enterprise users where one does not want its competitors to know all its transactions. Furthermore, the visibility of increasingly complex smart contracts brings severe security risks as demonstrated by the DAO and Parity.
 
-In conclusion, current mainstream chains do not suit the needs of ContentBox. Admittedly, many nascent projects are claiming they can solve the problems above, but none of them has proved to be mature in production; or they lack support for privacy, or just cannot onboard enough developers and users to form a positive, self-growing ecosystem. To address the aforementioned challenges and eventually build a sustainable ecosystem for the whole digital content industry, we here propose an architecture which consists of three main components:
++ **Prevalence of micropayments.** It is expected the majority of content transactions will transfer low values. For example, a user supports content creators with small donations, or he pays for access to premium content like watching an episode of a popular TV show. The industry needs a frictionless micropayment solution to foster a vibrant and healthy community. This translates to a blockchain with minimal or even zero transaction fees.
+
+In conclusion, current mainstream blockchains, such as Bitcoin and Ethereum, do not suit the needs of the digital content industry due to its unique traits. It leaves us no choice but to find novel solutions and build a light-weight yet scalable blockchain. Admittedly, many nascent projects are claiming they can solve the problems above, but none of them has proven mature in production or onboarded enough users and developers to form a positive self-growing ecosystem. To address the aforementioned challenges and eventually build a sustainable ecosystem for the global digital content industry, we propose an architecture consisting of three main components:
 
 + **BOX Payout**. A fast and secure blockchain to carry out multiparty contingent payments.
 + **BOX Passport**. A blockchain-based identity and attribution service across multiple applications.
-+ **BOX Unpack**. A turn-key solution for small and medium-sized partners to setup an audio or video platform easily and quickly. 
++ **BOX Unpack**. A turn-key solution for small and medium-sized partners to setup a content platform easily and quickly. 
 
 \begin{figure}[h]
   \begin{center}
@@ -102,29 +104,31 @@ In conclusion, current mainstream chains do not suit the needs of ContentBox. Ad
 The above components will be elaborated in the following sections.
 
 ## Design Goals and Principles
-Before delving into the details of the core components, we would like to introduce the goals and some of the principles followed in the design of ContentBox. 
+Before delving into the details of the core components, we would like to introduce the goals and principles followed in the design of ContentBox. 
 
 To be concise, the major design goals of ContentBox architecture are: 
 
-+ Scale well when the contents and users grow exponentially.
++ Scale when content and users grow rapidly.
 
-+ Protect privacy well when processing multiparty transactions.
++ Support most common smart contracts of content business.
 
-+ Support micro-payment.
++ Protect transaction privacy.
 
-+ Easy to integrate with current applications.
++ Support micropayments.
 
-In concept, the above goals can all be achieved by designing a more powerful, full-functional, EVM-compliant blockchain. However, ContentBox plans to take another approach other than a monolithic chain system. Actually, the design of ContentBox follows the __UNIX philosophy__: building a large system on top of a series of simple, modular, and reliable small parts, and that reflects the first design principle of us: build the system on **reliable and replaceable** parts, which can be easily debugged and upgraded. 
++ Easy to integrate with existing applications.
 
-In addition, ContentBox attempts to make the whole system **friendly to developers** throughout its design. An ecosystem cannot be successful just because of its superiority in technology; more importantly, it needs to win the heart of developers and users. Therefore, another principle applied throughout ContentBox is to avoid reinventing the wheels, but rather embrace the today's programming world and take advantage of the proven, widely-used tech stacks.
+Conceptually, all of the above goals can be achieved by designing a more powerful, fully-functional, EVM(Ethereum Virtual Machine)-compliant blockchain. However, ContentBox plans to take another approach other than a monolithic blockchain. Actually, the design of ContentBox follows the __UNIX philosophy__: building a large system on top of a series of simple, modular, and reliable small parts, which can be easily debugged and upgraded. 
 
-Another important principle is to keep the concepts **orthogonal**. We do not want a chain to serve two or more objectives which could make it hard to implement. Likewise, we do not want two components share some common functionalities, which could confuse many application developers. Orthogonality makes it easier to understand what happens when things combine.
+In addition, ContentBox attempts to make the whole system **friendly to developers** throughout its design. An ecosystem cannot be successful just because of its technology superiority; more importantly, it needs to win the hearts and minds of users and developers. Therefore, another principle applied throughout ContentBox is to avoid reinventing the wheels whenever possible and reuse proven, widely-used, state-of-the-art technology stacks.
+
+Another important principle is to keep concepts **orthogonal**. We do not want a blockchain to serve more than one purpose which makes it hard to implement. Likewise, we do not want two components sharing some common functionalities, which could confuse application developers. Orthogonality makes it easier to reason about what happens when things combine.
 
 ## BOX Payout
 
-### A Chain Without Virtual Machine
+### A Blockchain Without Virtual Machine
 
-BOX Payout is NOT a blockchain that supports a general purpose Turing-complete virtual machine. The main purpose of BOX Payout blockchain is to support fast and secure conditional transactions which is of great importance in a blockchain-based digital contents world. Undoubtedly, a Turing-complete virtual machine like EVM can carry out conditional transactions and ensure its execution and results, but it is not the only way!
+BOX Payout is NOT a blockchain that supports a general purpose Turing-complete virtual machine. The main purpose of BOX Payout blockchain is to support fast and secure conditional transactions which is of great importance in a digital content world. Undoubtedly, a Turing-complete virtual machine like EVM can carry out arbitrary conditional transactions and ensure its execution and results, but it may not always be the optimal way.
 
 \begin{figure}[h]
   \centering
@@ -133,9 +137,9 @@ BOX Payout is NOT a blockchain that supports a general purpose Turing-complete v
   \caption{Traditional On-chain Smart Contract. Applications Interact with Blockchain through EVM}
 \end{figure}
 
-A simple example of conditional transactions in the digital content area is like this: _if movie X is about to be streamed on platform P to user A, tokens should be paid from A to movie X's IP owner S if S can proof he does own the copyright of X, and to platform P to get the access key for X._ To enforce such a multi-party payout, one can choose to write a smart contract to govern the transfer of tokens among each party and then let the Ethereum Virtual Machine to execute the contract and validate the result.  
+A simple example of conditional transactions in the digital content area is shown previously involving a user, a piece of content, and a platform. To enforce such a multiparty payout, one can write a smart contract to govern the token transfer to each party, let the EVM execute it and validate the result.
 
-Obviously, this is a very resource intensive approach. With the diversity of the contents comes the diversity of smart contracts, thus bringing heavy burden to the blockchain, because **every contract will be executed for every message on every node**. But luckily, the advancement made in cryptographic research and works spearheaded by Andrew Poelstra, a scientist at Blockstream, point us another way to achieve the same goal without using a virtual machine, which we called _Crypto Contracts_:
+Obviously, this is a very resource intensive approach. With the diversity of content comes the diversity of smart contracts, thus bringing heavy burden to the blockchain, because **every contract will be executed for every message on every node**. But luckily, the advancement made in cryptographic research and work spearheaded by Andrew Poelstra, a scientist at Blockstream, point us an alternative way to achieve the same goal without a virtual machine, which we call _Crypto Contracts_:
 
 ### Crypto Contracts
 
@@ -222,7 +226,8 @@ The major functionalities of BOX Unpack include: sign up and log in with BOX Pas
 
 Besides the developer tools mentioned above, BOX Unpack also provides a turn-key solution for small startups who want to provide digital content services to the users but lack of the fund or technology to set up a full-fledged online platform. Just imagine a small team who want to create a better video app with an outstanding player they just developed, the first challenge facing them will be the high copyrights purchase costs. With the turn-key solution, this team can overcome the copyright hurdle by setting up revenue sharing scheme easily without programming any smart contract. We believe the turn-key solution will dramatically lower the entry barrier for potential partners to join and grow ContentBox.
  
-## Related Works
+## Related Work
+There is a plethora of work trying to attack scalability and privacy issues of current blockchains. Unfortunately, none of them can be directly applied to solve the unique challenges ContentBox aims to overcome. Nevertheless, there are many potential techniques to be leveraged and we are actively monitoring their progress.
 
 ### Sharding
 Similar to database sharding in traditional database software system, such as MySQL, sharding on blockchain is an approach to improve system scalability. The key idea to split the overall state of the chain into different shards, and each shard only process a small part of the state and does so in parallel[^fn11]. 
@@ -234,7 +239,7 @@ Overall, we believe sharding still has a long way to go before becoming a widely
 ### Lighting Network and Raiden Network
 Basically, both Lightning[^fn9] and Raiden[^fn10] network rely on off-chain state channels. The core idea here is that participants put some bitcoin or ether into a multi-signature address (open a payment channel) and then sign transactions without submitting it to the blockchain. Payment channels can be organized into a network and thus a payment between two parties can be conducted through multiple hops. The payment channel can be closed by either party at any time, and the last-signed transaction with the most up-to-date balances for both parties is the one that will be committed to the blockchain.
 
-Both of these two approaches can increase transaction throughput and lower fees effectively in their respective environment (one for Bitcoin and one for Ethereum) if properly implemented. However, there are still some limitations in practice. For instance, all participants of a transaction need to lock up some tokens on the chain until the channel is closed, thus discouraging a central payee to use the payment network. 
+Both of these two approaches can increase transaction throughput and lower fees effectively in their respective environment (one for Bitcoin and the other for Ethereum) if properly implemented. However, there are still some limitations in practice. For instance, all participants of a transaction need to lock up some tokens on chain until the channel is closed, thus discouraging usage of the payment network.
 
 ### Plasma
 Plasma[^fn12] is one of the most promising proposals for scaling smart contract computation on the blockchain. With Plasma, the blockchains are composed into a tree hierarchy, and each branch is treated as a blockchain that has its own history and computations that are map-reducable. Therefore, the root chain only needs to handle a small amount of merkleized commitments from child chains, which results in high scalability.
@@ -357,7 +362,7 @@ Percentage | Item |
 
 + **Hu Gang** - Chief Crypto Officer and ContentBox CTO. Gang is a serial entrepreneur, system architect and full-stack engineer with more than a decade of experience in building web and mobile applications. He earned his Master's degree in Computer Science from Peking University in 2002. He also earned his MBA from Duke University. He was previously a partner and CTO at 5miles, a leading mobile e-commerce app in US with millions of daily active users.
 
-+ **Alex He** - Co-Founder of CastBox and CTO. From 2003 to 2015, Mr. He has worked at Motorola, Borqs, and Xiaomi, with a focus on the Linux / Java / Android mobile software research and development. Since 2007, he has been engaged in the research and development of Android mobile technology and was one of the earliest Android developers in China. Mr. He joined the Founder Institute of Peking University after graduation, working in software research and development in the field of multimedia. Mr. He has managed R&D teams numbering in the hundreds. Also, he is an active open source developer on GitHub. Peking University Class of 1999.
++ **Alex He** - Co-Founder of CastBox and CTO. From 2003 to 2015, Mr. He has worked at Motorola, Borqs, and Xiaomi, with a focus on the Linux/Java/Android mobile software research and development. Since 2007, he has been engaged in the research and development of Android mobile technology and was one of the earliest Android developers in China. Mr. He joined the Founder Institute of Peking University after graduation, working in software research and development in the field of multimedia. Mr. He has managed R&D teams numbering in the hundreds. Also, he is an active open source developer on GitHub. Peking University Class of 1999.
 
 + **Dr. Xiaohui Liu** - Blockchain Scientist. Former Research Scientist at Facebook, designing and implementing distributed protocol for next generation wireless mesh networks . blockchain developer: expert in Bitcoin protocol and experienced in smart contracts • 10 years of research and development experience in distributed networking protocols • 1 patent and 9 papers in international premier conferences, 2 Facebook open source projects . Ph.D. in distributed networking from Wayne State University, USA and bachelor from Wuhan University, China. 
 
