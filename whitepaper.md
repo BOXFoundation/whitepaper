@@ -77,17 +77,17 @@ As the founding member of the Foundation, CastBox will pioneer the transition fr
 
 ## Why A New Blockchain?
 
-The digital conent industry bears a few unique traits warranting its own dedicated blockchain at this stage.
+The digital content industry bears a few unique traits warranting its own dedicated blockchain at this stage.
 
 + **High frequency.** The digital content industry is quite different from payment or e-commerce world in terms of action frequency. Typically we transfer our money or buy/sell goods no more than several times a day. But on a digital content platform, it is not uncommon for a user to stream a song, watch a movie clip, and tip an article author within a few minutes. In other words, we expect much larger transaction volume in the digital content world serving millions of users. This requires the underlying blockchain to support high transaction throughput, potentially hundreds or even thousands of transactions per second.
 
-+ **Few transaction patterns.** Most content business logic boils down to something like: _if content C is about to be consumed on platform P by user U, tokens should be paid from U to content C's owner O if U can prove he owns the copyright of C, and to platform P to get the access key for X._ This means we do not have to support arbitrary and general smart contracts and be Turing complete. It suffices to enable only a very limited set of smart contracts like Bitcoin scripting does, greatly simplifying our blockchain design and reducing its workload. All the security risks coming with Turing-completeness, as seen in Ethereum, can also be avoided.
-
-+ **No privacy in smart contracts.** The appeal of a public blockchain such as Ethereum partially lies in its transparency: all smart contracts are stored publicly on every node and are independently auditable. However, users often prefer to transact privately. For example, it is not desirable for a podcast creator's streaming income to be detectable to a lot of people he does not even know. Privacy is even more critical for enterprise users where one does not want its competitors to know all its transactions. Furthermore, the visibility of increasingly complex smart contracts brings severe security risks as demonstrated by the DAO and Parity.
++ **High bar for privacy protection.** The appeal of a public blockchain such as Ethereum partially lies in its transparency: all smart contracts are stored publicly on every node and are independently auditable. However, users on digital content platforms often prefer to confidential transactions. For example, it is not desirable for a podcast creator's streaming income to be detectable to a lot of people he does not even know. Privacy is even more critical for enterprise users where one does not want its competitors to know all its transactions. Furthermore, the visibility of increasingly complex smart contracts brings severe security risks as demonstrated by The DAO[^fn5] and Parity[^fn4].
 
 + **Prevalence of micropayments.** It is expected the majority of content transactions will transfer low values. For example, a user supports content creators with small donations, or he pays for access to premium content like watching an episode of a popular TV show. The industry needs a frictionless micropayment solution to foster a vibrant and healthy community. This translates to a blockchain with minimal or even zero transaction fees.
 
-In conclusion, current mainstream blockchains, such as Bitcoin and Ethereum, do not suit the needs of the digital content industry due to its unique traits. It leaves us no choice but to find novel solutions and build a light-weight yet scalable blockchain. Admittedly, many nascent projects are claiming they can solve the problems above, but none of them has proven mature in production or onboarded enough users and developers to form a positive self-growing ecosystem. To address the aforementioned challenges and eventually build a sustainable ecosystem for the global digital content industry, we propose an architecture consisting of three main components:
+Evidently, current mainstream blockchains, such as Bitcoin and Ethereum, are not a natural fit for the digital content industry. It leaves us no choice but to find novel solutions and build a light-weight yet scalable blockchain. Admittedly, many nascent projects are claiming they can solve the problems above, but none of them has proven mature in production or onboarded enough users and developers to form a positive self-growing ecosystem. 
+
+To address the aforementioned challenges and eventually build a sustainable ecosystem for the global digital content industry, we propose an architecture consisting of three main components:
 
 + **BOX Payout**. A fast and secure blockchain to carry out multiparty contingent payments.
 + **BOX Passport**. A blockchain-based identity and attribution service across multiple applications.
@@ -126,7 +126,7 @@ Another important principle is to keep concepts **orthogonal**. We do not want a
 
 ## BOX Payout
 
-### A Blockchain Without Virtual Machine
+### A Chain Without Virtual Machine
 
 BOX Payout is NOT a blockchain that supports a general purpose Turing-complete virtual machine. The main purpose of BOX Payout blockchain is to support fast and secure conditional transactions which is of great importance in a digital content world. Undoubtedly, a Turing-complete virtual machine like EVM can carry out arbitrary conditional transactions and ensure its execution and results, but it may not always be the optimal way.
 
@@ -264,8 +264,6 @@ For us, we think the basic design of Steem is quite impressive but we will not b
 
 ## Mobile Wallet
 
-A light wallet will be integrated into CastBox application. With the built-in wallet, a user can see his balances and transaction history instantly while using the app, including the token rewards for his contribution to the CastBox community. In the future, the wallet will show balances across apps. 
-
 \begin{wrapfigure}{r}{0.48\textwidth}
   \centering
   \captionsetup{justification=centering}
@@ -273,6 +271,8 @@ A light wallet will be integrated into CastBox application. With the built-in wa
   \caption{In-app light wallet}
   \vspace{-5pt}
 \end{wrapfigure}
+A light wallet will be integrated into CastBox application. With the built-in wallet, a user can see his balances and transaction history instantly while using the app, including the token rewards for his contribution to the CastBox community. In the future, the wallet will show balances across apps. 
+
 As a popular mobile app, CastBox is a natural host for a mobile wallet of BOX tokens. It will help onboard millions of users for ContentBox, solving one of the biggest problems when building an online ecosystem: cold start. Moreover, as CastBox is a frequently used app, the users will interact with the application multiple times a day and will get familiar with crypto token related concepts gradually. In the long run, when they are comfortable with BOX token and feel the benefits from the new blockchain-based system, they will push other applications they use to join ContentBox and grow the ecosystem together. 
 
 ## BOX Login 
@@ -406,8 +406,8 @@ In addition to the aforementioned risks, there are other risks (as more particul
 https://bitcoincore.org/en/2017/03/23/schnorr-signature-aggregation/
 [^fn2]: https://www.uport.me/
 [^fn3]: https://keybase.io/
-[^fn4]: https://play.google.com/store/apps/details?id=fm.castbox.audiobook.radio.podcast
-[^fn5]: https://itunes.apple.com/app/castbox-radio/id1243410543
+[^fn4]: https://www.bleepingcomputer.com/news/security/hacker-uses-parity-wallet-vulnerability-to-steal-30-million-worth-of-ethereum/
+[^fn5]: https://www.coindesk.com/dao-attacked-code-issue-leads-60-million-ether-theft/
 [^fn6]: https://open.weixin.qq.com/
 [^fn7]: https://play.google.com/store/apps/details?id=com.asiainno.uplive
 [^fn8]: Non-Interactive Proofs of Proof-of-Work
