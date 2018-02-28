@@ -44,7 +44,7 @@ In principle, ContentBox is designed to benefit all stakeholders in the industry
 
 For content creators, ContentBox's payout system will allow them to get rewards every time their content is consumed, motivating them to create more diverse and higher quality content. Top creators of the most popular content still reap big rewards while the rest can also receive compensation in proportion to their content popularity, who receive none previously. In addition, ContentBox will connect creators directly with their consumers by streamlining and automating business transactions without intermediaries, who chip away creators' share. 
 
-For consumers, they are also rewarded fairly according to their contributions in the form of tokens, thus are incentivized to be more active in growing a content platform organically. Users will receive token rewards as long as their activities  are beneficial for the content platform as a whole. It can be sharing content to a larger audience, voting or commenting on content, or sometimes simply consuming content. If a user has a stake in the success of the platform, he will put more effort and research into curating and advocating for it, as evidenced in the rise of Bitcoin.
+For consumers, they will be rewarded according to their contributions in the form of tokens, then they can spend the tokens on content consumption, like viewing a movie or streaming a song. Those contributions can be social sharing, voting or commenting on content, reporting spam, as long as they are beneficial to the platform. And if a user has a stake in the success of the platform, he will put more effort and research into curating and advocating for it, as evidenced in the rise of Bitcoin.
 
 Even advertisers will benefit from the new ecosystem. With ContentBox, advertisers can tap into a shared advertisement statistics ledger and pay by actual advertisement viewership automated by smart contracts, instead of relying on opaque statistics reported by distributors. Since the ledger is open, they can audit and verify it and have peace of mind. This can help them to build a unified and coherent marketing strategy, instead of running paralleled campaigns on different platforms. Furthermore, they can lower spending by leveraging a token-based bounty program.
 
@@ -344,7 +344,7 @@ Percentage | Usage | Detail |
 25% | Pre-sale | Target selected institutional investors, with a 6-month locking period. |
 15% | Team | Rewards for in-house R&D team and open-source contributors with a 4-year vesting period. |
 30% | Ecosystem Incentives | Incentive all participants in the ecosystem, such as the creators, the audiences, the individual investors, the platform, etc. |
-20% | Foundation | Protect the BOX token from speculative trading and fund the operations of the foundation. |
+20% | Foundation | Protect the BOX token from speculative trading and fund the operations of the Foundation. |
 10% | Partnership | To fund the bounty program and build partnership with other audio/video websites or mobile apps. |
 
 ## Use of Proceeds
