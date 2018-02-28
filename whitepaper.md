@@ -308,6 +308,13 @@ ContentBox allows for an open, fair, and creator-centric decentralized marketpla
 + More liquidity. In music industry, for example, it could take six to eighteen months before the first royalty check arrives at an artist after a song is released. In our new marketplace, an artist can be paid automatically in tradable built-in tokens while her song is being streamed, anywhere in the world.
 + More Transparency. Since all critical information is logged in a public blockchain, an artist can know exactly how many times and when her song is streamed, how much revenue it was generating. 
 
+
+## Native Mini Crowdfunding Launchpad
+
+Traditionally, content creators have very few ways to fund their creative projects and rely on powerful intermediaries such as music labels and film studios, which take a significant cut of the whole pie. With ContentBox, creators can raise funding truly independently. A filmmaker can pre-sell tokens to fans to fund an independent film, which grant them access to the film once it is made. The crowdfunding smart contract can also include advanced features. For instance, fans can share a portion of the film revenue per their tokens. Or fans can specify funds to be gradually released, contingent on reaching production milestones. The same is applicable to other forms of creative endeavors such as music and TV shows.
+
+Crowdfunding within the ContentBox ecosystem can leverage the network effect of existing large user base, who are more likely to support digital content projects than users on other crowdfunding platforms. In addition, these native tokens can be utilized frictionlessly on ContentBox blockchain without additional hurdle of exchanging if crowdfunding is done outside.
+
 ## Decentralized "AdSense" for Content Platforms
 
 AdSense is a program run by Google that allows publishers in the Google Network of content sites to serve automatic text or multimedia advertisements, that are targeted to site content and audience. With ContentBox, we can run a similar program just like AdSense to facilitate transactions between advertisers and content publishers. But unlike Google AdSense, this program is based on public blockchains instead of a central giant platform like Google. Ads inventory can be organized on a decentralized file system like IPFS, and the dispatch engine can be developed by leveraging the modules provided by BOX Unpack. And the monetization and payments can be made via BOX Payout. 
