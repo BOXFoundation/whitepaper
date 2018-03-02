@@ -160,7 +160,7 @@ Consider a simple case: Alice wants to stream an online movie owned by Bob, and 
   \begin{center}
     \captionsetup{justification=centering}
     \includegraphics[width=0.4\textwidth]{images/schnorr}
-    \caption{Alice Pays Bob to Gain An Access Key for A Movie with An Adaptor Signature}
+    \caption{Alice pays Bob to gain a movie access key with an adaptor signature}
   \end{center}
 \end{figure}
 
