@@ -25,14 +25,9 @@ During the past years, we witness the explosive growth of the digital content in
 
 + **Content creators struggling to profit from their own creation.** It is extremely difficult to monetize one's created content online. On many content platforms such as YouTube and Instagram, users create all content, from which platforms profit enormously by selling advertisement. However, the vast majority of  creators share no profit at all for their indispensable contributions. In addition, when creators do get paid for their content, layers of intermediaries siphon off a majority share. Creators are in weak position and lack bargain power when deciding monetization and payout. It is not surprising platforms take most of the revenue and creators only collect a small part of the pie. For instance, when a song is streamed, only about 15% of the sales income goes to its creators, the bulk goes to streaming services and record labels.
 
-+ **Content consumers not rewarded for their contributions.** Consumers engage in a wide variety of activities vital to content platforms, but are never financially recognized.
-*Curation*: users spend valuable time and energy to collectively curate (e.g., like/vote/flag/comment) content, filtering low quality content from high quality one; yet, receive no compensation. They are commercially exploited by powerful platforms (e.g., YouTube) at the appearance of free services.
-*Share*: sharing within or outside a content platform (e.g., sharing a YouTube video to followers on YouTube or Facebook) brings more visibility to content and attracts more traffic to the platform.
-*Attention*: the Internet is flooded with all types of digital content with greatly varying qualities, what is scarce is no longer content per se, but a user’s attention. User spending limited attention on content, including advertisement, is valuable.
++ **Content consumers not rewarded for their contributions.** Consumers engage in a wide variety of activities vital to content platforms, but are never financially recognized. *Curation*: users spend valuable time and energy to collectively curate (e.g., like/vote/flag/comment) content, filtering low quality content from high quality one; yet, receive no compensation. They are commercially exploited by powerful platforms (e.g., YouTube) at the appearance of free services. *Share*: sharing within or outside a content platform (e.g., sharing a YouTube video to followers on YouTube or Facebook) brings more visibility to content and attracts more traffic to the platform. *Attention*: the Internet is flooded with all types of digital content with greatly varying qualities, what is scarce is no longer content per se, but a user’s attention. User spending limited attention on content, including advertisement, is valuable.
 
-+ **Lack of transparency.** Key information about who consumes what content and when (including advertisement) is locked in proprietary data silos.
-This lack of information is one reason for fierce competition between big dominating distributors. They often have to bid for exclusive rights of popular content with insanely high prices, driving up the acquisition cost and suffering from the so called winner’s curse. At the same time, small and medium-sized distributors cannot afford over-priced content and have no choice but to resort to low quality or pirated content.
-Advertisers also feel opaque in what they are paying for. They bid for users’ attention on a centralized platform and suffer from the snowballing marketing cost as well. Their spending is largely obscured by the platform and their link to end users is fragile and vulnerable, contingent upon their relationship with the centralized distributor.
++ **Vicious competition between content platforms.** Since the key information of users and contents is locked in proprietary data silos, it nearly impossible for content platforms to build trust between each other, which often leads to vicious competition in the digital content industry. It is not uncommon that we see big content platforms bid for IP rights of popular content with insanely high prices, driving up the cost of the bid winner and at the same time, leaving the small and medium-sized platforms no choice but to turn to low quality or pirated content. And usually the surging cost will be transferred to the end users with longer ads or higher subscription fee, hurting the user experience eventually. 
 
 ## A Blockchain-based Ecosystem: ContentBox
 
@@ -170,7 +165,7 @@ Consider a simple case: Alice wants to stream an online movie owned by Bob, and 
 \end{figure}
 
 #. Alice, Bob share $P_A$, $P_B$ (public keys), $R_A$, $R_B$ (random nonce points); Bob calculates $T = t * G$, and gives T to Alice
-#. Alice and Bob therefore agree on random challenge $e = H(J(A, B) || R_A + R_B + T || m)$ ($H$ denotes hash algorithm, and these two steps not shown on the figure below)
+#. Alice and Bob therefore agree on random challenge $e = H(J(A, B) || R_A + R_B + T || m)$ ($H$ denotes hash algorithm, and these two steps not shown on the figure)
 #. Bob provides adaptor signature $s' = r_B + e * x_B'$ (shown on the upper-right corner of the figure)
 #. Alice verifies: $s' * G = R_B + e * P_B'$
 #. If OK, Alice sends to Bob her signature: $s_A = r_A + e * x_A'$
@@ -348,7 +343,7 @@ Before the official launch of the native blockchain on the ContentBox Platform, 
 
 Percentage | Usage | Detail |
 |---|---|--------|
-25% | Pre-sale | Target selected institutional investors, with a 6-month locking period. |
+25% | Pre-sale | Target selected institutional investors, with locking period up to 6 months. |
 15% | Team | Rewards for in-house R&D team and open-source contributors with a 4-year vesting period. |
 30% | Ecosystem Incentives | Incentive all participants in the ecosystem, such as the creators, the audiences, the individual investors, the platform, etc. |
 20% | Foundation | Protect the BOX token from speculative trading and fund the operations of the Foundation. |
@@ -413,7 +408,7 @@ In addition to the aforementioned risks, there are other risks (as more particul
 https://bitcoincore.org/en/2017/03/23/schnorr-signature-aggregation/
 [^fn2]: https://www.uport.me/
 [^fn3]: https://keybase.io/
-[^fn4]: https://www.bleepingcomputer.com/news/security/hacker-uses-parity-wallet-vulnerability-to-steal-30-million-worth-of-ethereum/
+[^fn4]: https://cointelegraph.com/news/lessons-from-parity-attack
 [^fn5]: https://www.coindesk.com/dao-attacked-code-issue-leads-60-million-ether-theft/
 [^fn6]: https://open.weixin.qq.com/
 [^fn7]: https://play.google.com/store/apps/details?id=com.asiainno.uplive
