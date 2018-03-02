@@ -237,7 +237,7 @@ Basically, both Lightning[^fn9] and Raiden[^fn10] network rely on off-chain stat
 Both of these two approaches can increase transaction throughput and lower fees effectively in their respective environment (one for Bitcoin and the other for Ethereum) if properly implemented. However, there are still some limitations in practice. For instance, all participants of a transaction need to lock up some tokens on chain until the channel is closed, thus discouraging usage of the payment network.
 
 ### Plasma
-Plasma[^fn12] is one of the most promising proposals for scaling smart contract computation on the blockchain. With Plasma, the blockchains are composed into a tree hierarchy, and each branch is treated as a blockchain that has its own history and computations that are map-reducable. Therefore, the root chain only needs to handle a small amount of merkleized commitments from child chains, which results in high scalability.
+Plasma[^fn12] is one of the most promising proposals for scaling smart contract computation on the blockchain. With Plasma, the blockchains are composed into a tree hierarchy, and each branch is treated as a blockchain that has its own history and computations that are map-reducible. Therefore, the root chain only needs to handle a small amount of merkleized commitments from child chains, which results in high scalability.
 .
 Both of the two authors of Plasma are genius in the blockchain field and they proposed a quite novel solution to the long standing problem of current main stream networks. Ideally, it will suit well for the digital content industry and could serve as the basis of ContentBox. However, the whole project is still in its infant stage and some critical challenges need to be well addressed, such as how to handle an attack occurred on a child chain. The solution of moving participants to another chain proposed in Plasma white paper is far from perfect as a smooth fund moving cannot be easily implemented and guaranteed. And the whole system is still suffering from the possible security holes in the smart contracts.
 
@@ -345,9 +345,9 @@ Percentage | Usage | Detail |
 |---|---|--------|
 25% | Pre-sale | Target selected institutional investors, with locking period up to 6 months. |
 15% | Team | Rewards for in-house R&D team and open-source contributors with a 4-year vesting period. |
-30% | Ecosystem Incentives | Incentive all participants in the ecosystem, such as the creators, the audiences, the individual investors, the platform, etc. |
+30% | Ecosystem Incentives | Incentivize all participants in the ecosystem, such as the creators, the audiences, the individual investors, the platform, etc. |
 20% | Foundation | Protect the BOX token from speculative trading and fund the operations of the Foundation. |
-10% | Partnership | To fund the bounty program and build partnership with other audio/video websites or mobile apps. |
+10% | Partnership | Fund the bounty program and build partnership with other audio/video websites or mobile apps. |
 
 ## Use of Proceeds
 
