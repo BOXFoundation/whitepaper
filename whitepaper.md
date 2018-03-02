@@ -274,7 +274,7 @@ As a popular mobile app, CastBox is a natural host for a mobile wallet of BOX to
 
 CastBox will migrate the its accounts onto the blockchain and give every user a secure universal BOX ID once the BOX Passport system is ready for production. After the migration, CastBox's backend server will no longer store the users' account and credential information. Instead, the app client will hit the blockchain to retrieve and verify a user's identity during the sign-in process. 
 
-Using BOX Passport will bring benefits to CastBox's operator and its end-users as well. Since the user authentication and authorization has bee moved from the app's servers to a public blockchain, the operator shakes off the burden of guarding hacker attacks on user information. On the other hand, the app users also gain back the control of their own data, mitigating the risk of personal data breaches. 
+Using BOX Passport will bring benefits to CastBox's operator and its end-users as well. Since the user authentication and authorization has been moved from the app's servers to a public blockchain, the operator shakes off the burden of guarding hacker attacks on user information. On the other hand, the app users also gain back the control of their own data, mitigating the risk of personal data breaches. 
 
 ## In-app Token-based Reward System
 
