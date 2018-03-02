@@ -5,7 +5,7 @@ header-includes:
 title: "ContentBox"
 subtitle: "A Blockchain Ecosystem for the Global Digital Content Industry"
 author: [CastBox.fm]
-date: 2018-02-04
+date: 2018-03-02
 titlepage: true
 titlepage-color: 1565c0
 titlepage-text-color: ffffff
@@ -55,7 +55,7 @@ CastBox is one of the most popular mobile audio platforms across the globe, rank
 
 Founded in early 2016 by an ex-Googler, the application currently has over 50 million audio content available, with over 12 million installed users. It is also the winner of Google Global Android Excellence Program 2017, the Most Entertaining of Best Apps by Google Play in 2016 and a number of other awards. CastBox is listed as Editors’ choice in 135 of Google Play’s countries.
 
-\begin{figure}{h}
+\begin{figure}[h]
   \centering
   \captionsetup{justification=centering}
   \includegraphics[width=0.6\textwidth]{images/rank}
@@ -164,11 +164,12 @@ Consider a simple case: Alice wants to stream an online movie owned by Bob, and 
   \end{center}
 \end{figure}
 
-#. Alice, Bob share $P_A$, $P_B$ (public keys), $R_A$, $R_B$ (random nonce points); Bob calculates $T = t * G$, and gives T to Alice
+#. Alice, Bob construct joint key $J(A, B) = P_A' + P_B'$, where $P_A'=H(H(P_A||P_B)||P_A)*P_A$, $P_B'=H(H(P_A||P_B)||P_B)*P_B$ ($P_A$, $P_B$ are public keys)
+#. Alice, Bob share $P_A$, $P_B$, $R_A$, $R_B$ (random nonce points); Bob calculates $T = t * G$, and gives T to Alice
 #. Alice and Bob therefore agree on random challenge $e = H(J(A, B) || R_A + R_B + T || m)$ ($H$ denotes hash algorithm, and these two steps not shown on the figure)
-#. Bob provides adaptor signature $s' = r_B + e * x_B'$ (shown on the upper-right corner of the figure)
+#. Bob provides adaptor signature $s' = r_B + e * x_B'$ (shown on the upper-right corner of the figure, $x_B'$ is the private key for $P_B'$)
 #. Alice verifies: $s' * G = R_B + e * P_B'$
-#. If OK, Alice sends to Bob her signature: $s_A = r_A + e * x_A'$
+#. If OK, Alice sends to Bob her signature: $s_A = r_A + e * x_A'$ ($x_A'$ is the private key for $P_A'$)
 #. Bob completes, atomically releasing $t$: first, construct $s_B = r_B + t + e * x_B'$, then combine: $s_a = s_A + s_B$, sign the transaction and broadcast it on blockchain, then Alice sees $s_a$
 #. Alice subtracts: $s_a - s_A - s' = (r_B + t + e * x_B') - (r_B + e * x_B') = t$
 
