@@ -285,7 +285,7 @@ Using BOX Passport will bring benefits to CastBox's operator and its end-users a
   \includegraphics[width=0.36\textwidth]{images/reward}
   \caption{Earn BOX by flagging spams}
 \end{wrapfigure}
-Along with the light wallet, a token-based reward system will be built into CastBox as well. The reward system serves two goals mainly: incentivize the authors to create more valuable content and motivate the users to curate and spread good content. For example, if a listener finds an interesting podcast in CastBox, submits a comment, and then shares it with his friends on social networks (such as Facebook or Twitter), he will get BOX tokens as rewards. 
+Along with the light wallet, a token-based reward system will be built into CastBox as well. The reward system serves two goals mainly: incentivize authors to create more valuable content and motivate users to curate and spread good content. For example, if a listener finds an interesting podcast in CastBox, submits a comment, and then shares it with his friends on social networks (such as Facebook or Twitter), he will get BOX tokens as rewards. 
 
 Users can also gain tokens for helping filter spams. Spamming is a challenge for every online community and user experience will be hurt badly if it cannot be effectively controlled. Normally a digital content platform will solve this problem by hiring more moderators or put more money on the research of AI-based algorithms aiming to filter spams automatically. However, both of these approaches are costly and inefficient in practice. Through the built-in reward system, CastBox users can be rewarded for flagging low quality content. 
 
