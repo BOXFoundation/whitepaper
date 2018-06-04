@@ -19,6 +19,37 @@ titlepage-rule-height: 1
 
 # Introduction
 
+<!-- // http://kk.org/thetechnium/better-than-fre/
+ — It is my belief that audiences WANT to pay creators. Fans like to reward artists, musicians, authors and the like with the tokens of their appreciation, because it allows them to connect. But they will only pay if it is very easy to do, a reasonable amount, and they feel certain the money will directly benefit the creators. Radiohead’s recent high-profile experiment in letting fans pay them whatever they wished for a free copy is an excellent illustration of the power of patronage. The elusive, intangible connection that flows between appreciative fans and the artist is worth something. In Radiohead’s case it was about $5 per download. There are many other examples of the audience paying simply because it feels good.
+
+// https://bitcoinmagazine.com/articles/op-ed-how-tokenization-putting-real-world-assets-blockchains/
+ 1. Licensing 
+Music licensing relies heavily on paperwork and trust. Musicians hope that sales of their music and merchandise are properly calculated and reported to them. As streaming and digital downloads eliminate physical sales of media containing songs, the music would appear to be a great candidate for tokenization. If music ownership was represented on a blockchain, the many participants in creating the music could have their shares set electronically. The dream would be to have every listen of their music require “unlocking” and payment, with payment then being distributed to the appropriate holders. The holders could then transfer their interest in the music (e.g., if the drummer wants to convert their ownership to a down payment on a house) to someone else, who would then receive the payment stream. 
+More accurate reporting would be a benefit to everyone, but there are other changes that tokenization could trigger. Tokenization of music ownership could allow new business models such as investing in music creation by the public. If a new band could sell 20 percent of their new song to fans, what would that do to the creation of music? How would that affect intermediaries?
+An example of music ownership/licensing tokenization is SingularDTV. 
+
+Issuing color coin tokens
+Each of the colored coins implementations has a different way of creating colored
+coins, but they all provide similar functionality. The process of creating a colored
+coin asset is called issuance. An initial transaction, the issuance transaction registers
+the asset on the bitcoin blockchain and creates an asset ID that is used to reference
+the asset. Once issued, assets can be transferred between addresses using transfer
+transactions.
+Assets issued as colored coins can have multiple properties. They can be divisible or
+indivisible, meaning that the amount of asset in a transfer can be an integer (e.g., 5) or
+have decimal subdivision (e.g., 4.321). Assets can also have fixed issuance, meaning a
+certain amount are issued only once, or can be reissued, meaning that new units of
+the asset can be issued by the original issuer after the initial issuance.
+Finally, some colored coins enable dividends, allowing the distribution of bitcoin payments
+to the owners of a colored coin asset in proportion to their ownership.
+
+Counterparty
+Tokenly is a platform built on top of Counterparty that allows content
+creators, artists, and companies to issue tokens that express digital ownership and can
+be used to rent, access, trade, or shop for content, products, and services.
+-->
+
+
 ## Problem Statement
 
 During the past years, we witness the explosive growth of the digital content industry led by a variety of web and mobile content platforms such as Reddit, Youtube and Spotify. It has become an indispensable part of our modern daily life, with audio and video streaming constituting 70% of Internet data traffic. However, the __prosperity__ and __diversity__ of the industry are still handicapped by several long standing problems plaguing all stakeholders in the digital content arena, including creators, consumers, advertisers, and distributors.
