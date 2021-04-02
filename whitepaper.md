@@ -392,11 +392,7 @@ Percentage | Item |
 
 # Team
 
-+ **Renee Wang** - Founder and CEO of CastBox. Renee founded CastBox in 2016, and has spearheaded meteoric rise over the past two years. Throughout this period, she has not only built a global team of 50 talents but has closed more than $30 million dollars worth of investments. Renee was a part of the global mobile advertisement team for Google Beijing, Google Dublin and Google Japan. She was the 7th employee and Android engineer at Umeng, a China-based startup acquired by Alibaba, and was one of the earliest Android developers in 2008. Renee has a Bachelor's degree in Psychology from Peking University.
-
 + **Hu Gang** - Chief Crypto Officer and ContentBox CTO. Gang is a serial entrepreneur, system architect and full-stack engineer with more than a decade of experience in building web and mobile applications. He earned his Master's degree in Computer Science from Peking University in 2002. He also earned his MBA from Duke University. He was previously a partner and CTO at 5miles, a leading mobile e-commerce app in US with millions of daily active users.
-
-+ **Alex He** - Co-Founder of CastBox and CTO. From 2003 to 2015, Mr. He has worked at Motorola, Borqs, and Xiaomi, with a focus on the Linux/Java/Android mobile software research and development. Since 2007, he has been engaged in the research and development of Android mobile technology and was one of the earliest Android developers in China. Mr. He joined the Founder Institute of Peking University after graduation, working in software research and development in the field of multimedia. Mr. He has managed R&D teams numbering in the hundreds. Also, he is an active open source developer on GitHub. Peking University Class of 1999.
 
 + **Dr. Xiaohui Liu** - Blockchain Scientist. Former Research Scientist at Facebook, designing and implementing distributed protocol for next generation wireless mesh networks . blockchain developer: expert in Bitcoin protocol and experienced in smart contracts • 10 years of research and development experience in distributed networking protocols • 1 patent and 9 papers in international premier conferences, 2 Facebook open source projects . Ph.D. in distributed networking from Wayne State University, USA and bachelor from Wuhan University, China. 
 
